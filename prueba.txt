@@ -1,0 +1,17 @@
+COMANDOS BÁSICOS DE GIT
+
+iniciar proyecto: git init
+clonar proyecto: git clone [url del proyecto]
+=======================================================
+al crear un proyecto en el repositorio se debe de correr
+git remote add origin...
+y el
+git push -u origen...
+=======================================================
+ver cambios: git status
+agregar cambios: git add -A [o path del archivo]
+commit local: git commit -m "descripción"
+commit repositorio: git push
+commit por branch: git push -u [nombre del branch]
+=======================================================
+para bajar cambios: git pull

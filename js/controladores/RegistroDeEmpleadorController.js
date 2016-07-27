@@ -1,8 +1,8 @@
-app.controller('RegistroDeEmpleadorCtrl', ['$scope', 'RegistroDeEmpleadorFactory', function($scope, RegistroDeEmpleadorFactory) {
+app.controller('RegistroDeEmpleadorCtrl', ['$scope', 'EmpleadorFactory', function($scope, RegistroDeEmpleadorFactory) {
     $scope.empleador = {};
     $scope.registrarEmpleador = function() {
       console.log('empleador', $scope.empleador);
-        RegistroDeEmpleadorFactory.save($scope.empleador).$promise.then(function success(respuesta) {
+        EmpleadorFactory.save($scope.empleador).$promise.then(function success(respuesta) {
                 console.log('éxito en ingreso de solicitud', respuesta);
                 $scope.empleador = {};
             },

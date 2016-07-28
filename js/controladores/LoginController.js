@@ -6,7 +6,7 @@ app.controller('LoginCtrl', ['$scope', '$state', '$cookies', 'EmpleadorFactory',
             function success(respuesta) {
                 console.log('exito en login desde sails');
                 $cookies.put('empleadorId', respuesta.id);
-                $state.go('perfil-empleador');
+                $state.go('ofertas-empleador');
                 console.log(respuesta);
             },
             function error(error) {

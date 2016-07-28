@@ -26,6 +26,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
               credencial: false
             }
         })
+        .state('ofertas-empleador', {
+            url: "/ofertas-empleador",
+            templateUrl: "vistas/ofertas-empleador.html",
+            controller: 'OfertasEmpleadorCtrl',
+            data: {
+              credencial: true
+            }
+        })
         .state('perfil-empleador', {
             url: "/perfil-empleador",
             templateUrl: "vistas/perfil-empleador.html",

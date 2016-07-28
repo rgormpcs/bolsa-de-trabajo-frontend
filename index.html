@@ -9,38 +9,7 @@
 </head>
 
 <body ng-app="trabajoepn">
-
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#/"><img src="img/work.png" alt="" /></a>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#/">Inicio <span class="sr-only">(current)</span></a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Registro <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Postulante</a></li>
-                            <li><a href="#/registro-de-empleador">Empleador</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#/login">Ingreso</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="container">
-        <div ui-view></div>
-    </div>
+    <div ui-view></div>
     <!-- dependecias de boostrap -->
     <script src="lib/js/jquery-1.12.0.js"></script>
     <script src="lib/js/bootstrap.min.js"></script>
@@ -55,6 +24,7 @@
     <!-- controladores -->
     <script src="js/controladores/RegistroDeEmpleadorController.js"></script>
     <script src="js/controladores/LoginController.js"></script>
+    <script src="js/controladores/OfertasEmpleadorController.js"></script>
     <!-- factories -->
     <script src="js/factories/EmpleadorFactory.js"></script>
 </body>

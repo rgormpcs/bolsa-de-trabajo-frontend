@@ -14,6 +14,7 @@
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#/ofertas-empleador">Ofertas</a></li>
+                        <li><a href="#/registro-de-oferta">Nueva Oferta</a></li>
                         <li><a href="#/perfil-empleador">Mi Perfil</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -24,7 +25,7 @@
         </nav>
     </div>
     <div id="content">
-        <div class="container-fluid text-center">
+        <div class="container-fluid">
             <div class="row content">
                 <div class="col-sm-2 sidenav">
                     <p ng-repeat="facultad in facultades">
@@ -32,13 +33,19 @@
                     </p>
                 </div>
                 <div class="col-sm-8 text-left">
-                    <h1>Welcome</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <hr>
-                    <h3>Test</h3>
-                    <p>Lorem ipsum...</p>
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <td><a href="">Oferta 1...</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="">Oferta 2...</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="">Oferta 3...</a>.</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <div class="col-sm-2 sidenav">
                     <div class="well">
@@ -53,8 +60,8 @@
     </div>
 
 </div>
-<div id="footer">
+<!-- <div id="footer">
     <footer class="container-fluid text-center">
         <p>Footer Text</p>
     </footer>
-</div>
+</div> -->

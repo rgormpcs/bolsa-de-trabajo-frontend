@@ -1,0 +1,95 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/ofertas-empleador"><img src="img/work.png" alt="" /></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#/ofertas-empleador">Ofertas</a></li>
+                <li><a href="#/registro-de-oferta">Nueva Oferta</a></li>
+                <li><a href="#/perfil-empleador">Mi Perfil</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- TODO: cambiar for, id, etc ... -->
+<div class="row">
+    <div class="col-sm-5"></div>
+    <div class="col-sm-2">
+        <img class="logo" src="img/logo.png" alt="" />
+    </div>
+    <div class="col-sm-5"></div>
+</div>
+<div class="col-sm-2"></div>
+<div class="col-sm-8">
+    <h2><center>Registro de Oferta</center></h2>
+    <form class="form-horizontal">
+        <fieldset>
+            <div class="form-group">
+                <label for="inputEmail" class="col-lg-2 control-label">Cédula de Identidad</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="inputEmail" placeholder="Cédula de Identidad" ng-model="empleador.cedulaEmpleador">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword" class="col-lg-2 control-label">Nombre</label>
+                <div class="col-lg-10">
+                    <input type="password" class="form-control" id="inputEmail" placeholder="Nombre" ng-model="empleador.nombreEmpleador">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword" class="col-lg-2 control-label">Apellido</label>
+                <div class="col-lg-10">
+                    <input type="password" class="form-control" id="inputEmail" placeholder="Apellido" ng-model="empleador.apellidoEmpleador">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword" class="col-lg-2 control-label">Teléfono</label>
+                <div class="col-lg-10">
+                    <input type="password" class="form-control" id="inputEmail" placeholder="Teléfono" ng-model="empleador.telefonoEmpleador">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword" class="col-lg-2 control-label">Correo electrónico</label>
+                <div class="col-lg-10">
+                    <input type="password" class="form-control" id="inputEmail" placeholder="Correo electrónico" ng-model="empleador.correoEmpleador">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword" class="col-lg-2 control-label">Nombre de la Empresa</label>
+                <div class="col-lg-10">
+                    <input type="password" class="form-control" id="inputEmail" placeholder="Nombre de la Empresa" ng-model="empleador.nombreEmpresaEmpleador">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword" class="col-lg-2 control-label">Contraseña</label>
+                <div class="col-lg-10">
+                    <input type="password" class="form-control" id="inputEmail" placeholder="Contraseña" ng-model="empleador.contraseniaEmpleador">
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<div class="col-sm-2"></div>
+
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="reset" class="btn btn-default">Cancelar</button>
+                <button type="submit" class="btn btn-primary" ng-click="registrarEmpleador()">Registrar</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4"></div>
+</div>

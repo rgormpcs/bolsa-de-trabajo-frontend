@@ -7,7 +7,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: "vistas/inicio.html",
             // controller
             data: {
-              credencial: false
+                credencial: false
             }
         })
         .state('login', {
@@ -15,7 +15,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: "vistas/login.html",
             controller: 'LoginCtrl',
             data: {
-              credencial: false
+                credencial: false
             }
         })
         .state('registro', {
@@ -23,7 +23,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: "vistas/registro-de-empleador.html",
             controller: 'RegistroDeEmpleadorCtrl',
             data: {
-              credencial: false
+                credencial: false
+            }
+        })
+        .state('registro-de-oferta', {
+            url: "/registro-de-oferta",
+            templateUrl: "vistas/registro-de-oferta.html",
+            // controller: 'OfertasEmpleadorCtrl',
+            data: {
+                credencial: true
             }
         })
         .state('ofertas-empleador', {
@@ -31,7 +39,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: "vistas/ofertas-empleador.html",
             controller: 'OfertasEmpleadorCtrl',
             data: {
-              credencial: true
+                credencial: true
             }
         })
         .state('perfil-empleador', {
@@ -39,7 +47,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: "vistas/perfil-empleador.html",
             // controller: 'RegistroDeEmpleadorCtrl',
             data: {
-              credencial: true
+                credencial: true
             }
         });
     $urlRouterProvider.otherwise("/registro-de-empleador");
@@ -52,9 +60,9 @@ app.run(function($rootScope, $cookies, $state) {
         var credencial = toState.data.credencial;
         if (credencial) {
             if ($cookies.get('empleadorId')) {
-              console.log('éxito en ingreso');
+                console.log('éxito en ingreso');
             } else {
-              console.log('error en ingreso');
+                console.log('error en ingreso');
                 event.preventDefault();
                 return $state.go('login')
             }

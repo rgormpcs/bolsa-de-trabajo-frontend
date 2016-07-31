@@ -26,6 +26,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
                 credencial: false
             }
         })
+        .state('registroP', {
+            url: "/registro-de-postulante",
+            templateUrl: "vistas/registro-de-Postulante.html",
+            controller: 'RegistroDePostulanteCtrl',
+            data: {
+                credencial: false
+            }
+        })
         .state('registro-de-oferta', {
             url: "/registro-de-oferta",
             templateUrl: "vistas/registro-de-oferta.html",

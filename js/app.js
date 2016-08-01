@@ -37,7 +37,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('registro-de-oferta', {
             url: "/registro-de-oferta",
             templateUrl: "vistas/registro-de-oferta.html",
-            // controller: 'OfertasEmpleadorCtrl',
+            controller: 'RegistroDeOfertaCtrl',
             data: {
                 credencial: true
             }
@@ -50,9 +50,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
                 credencial: true
             }
         })
-        .state('perfil-empleador', {
-            url: "/perfil-empleador",
-            templateUrl: "vistas/perfil-empleador.html",
+        .state('editar-perfil-empleador', {
+            url: "/editar-perfil-empleador",
+            templateUrl: "vistas/editar-perfil-empleador.html",
             // controller: 'RegistroDeEmpleadorCtrl',
             data: {
                 credencial: true

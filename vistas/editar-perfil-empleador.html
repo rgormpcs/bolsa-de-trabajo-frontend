@@ -1,6 +1,5 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
-
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                 <span class="icon-bar"></span>
@@ -12,7 +11,6 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#/ofertas-empleador">Ofertas</a></li>
-                <li><a href="#/registro-de-oferta">Nueva Oferta</a></li>
                 <li><a href="#/editar-perfil-empleador">Editar Perfil</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -21,7 +19,7 @@
         </div>
     </div>
 </nav>
-<!-- TODO: cambiar for, id, etc ... -->
+<!-- Ediar empleador-->
 <div class="row">
     <div class="col-sm-5"></div>
     <div class="col-sm-2">
@@ -31,55 +29,49 @@
 </div>
 <div class="col-sm-2"></div>
 <div class="col-sm-8">
-    <h2><center>Registro de Oferta</center></h2>
+    <h2><center>Editar Empleador</center></h2>
     <form class="form-horizontal">
         <fieldset>
             <div class="form-group">
-                <label for="inputArea" class="col-lg-2 control-label">Área</label>
+                <label for="inputCedula" class="col-lg-2 control-label">Cédula de Identidad</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" id="inputArea" placeholder="Área" ng-model="ofertaTrabajo.areaTrabajo">
+                    <input type="text" class="form-control" id="inputCedula" placeholder="Cédula de Identidad" ng-model="empleador.cedulaEmpleador">
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputTipoPuesto" class="col-lg-2 control-label">Tipo de Puesto</label>
+                <label for="inputNombre" class="col-lg-2 control-label">Nombre</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" id="inputTipoPuesto" placeholder="Tipo de Puesto" ng-model="ofertaTrabajo.tipoDePuestoTrabajo">
+                    <input type="text" class="form-control" id="inputNombre" placeholder="Nombre" ng-model="empleador.nombreEmpleador">
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputFacultad" class="col-lg-2 control-label">Facultad</label>
+                <label for="inputApellido" class="col-lg-2 control-label">Apellido</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" id="inputFacultad" placeholder="Facultad" ng-model="ofertaTrabajo.facultadTrabajo">
+                    <input type="text" class="form-control" id="inputApellido" placeholder="Apellido" ng-model="empleador.apellidoEmpleador">
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputRemuneracion" class="col-lg-2 control-label">Remuneración</label>
+                <label for="inputTelefono" class="col-lg-2 control-label">Teléfono</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" id="inputRemuneracion" placeholder="Remuneración" ng-model="ofertaTrabajo.remuneracion">
+                    <input type="text" class="form-control" id="inputTelefono" placeholder="Teléfono" ng-model="empleador.telefonoEmpleador">
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputDireccion" class="col-lg-2 control-label">Dirección</label>
+                <label for="inputCorreoElectronico" class="col-lg-2 control-label">Correo electrónico</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" id="inputDireccion" placeholder="Dirección" ng-model="ofertaTrabajo.direccionTrabajo">
+                    <input type="email" class="form-control" id="inputCorreoElectronico" placeholder="Correo electrónico" ng-model="empleador.correoEmpleador">
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputDescripcion" class="col-lg-2 control-label">Descripción</label>
+                <label for="inputNombreEmpresa" class="col-lg-2 control-label">Nombre de la Empresa</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" id="inputDescripcion" placeholder="Deescripcion" ng-model="ofertaTrabajo.descripcionTrabajo">
+                    <input type="text" class="form-control" id="inputNombreEmpresa" placeholder="Nombre de la Empresa" ng-model="empleador.nombreEmpresaEmpleador" >
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputFechaInicio" class="col-lg-2 control-label">Fecha Inicio</label>
+                <label for="inputPassword" class="col-lg-2 control-label">Contraseña</label>
                 <div class="col-lg-10">
-                    <input type="date" class="form-control" id="inputFechaInicio" placeholder="Fecha Inicio" ng-model="ofertaTrabajo.fechaInicioPublicacionTrabajo">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="inputFechaFin" class="col-lg-2 control-label">Fecha Fin</label>
-                <div class="col-lg-10">
-                    <input type="date" class="form-control" id="inputFechaFin" placeholder="Fecha Fin" ng-model="ofertaTrabajo.fechaFinPublicacionTrabajo">
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña" ng-model="empleador.contraseniaEmpleador">
                 </div>
             </div>
         </fieldset>
@@ -93,7 +85,7 @@
         <div class="form-group">
             <div class="col-lg-10 col-lg-offset-2">
                 <button type="reset" class="btn btn-default">Cancelar</button>
-                <button type="submit" class="btn btn-primary" ng-click="registrarNuevaOferta()">Registrar</button>
+                <button type="submit" class="btn btn-primary" ng-click="editarEmpleador()">Actualizar</button>
             </div>
         </div>
     </div>

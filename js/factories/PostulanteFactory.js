@@ -1,4 +1,4 @@
-app.factory('postulanteFactory', ['$resource', function($resource) {
+app.factory('PostulanteFactory', ['$resource', function($resource) {
     var factory = $resource('http://localhost:1337/Postulante/:idUsuario', {
         idUsuario: '@idUsuario'
     }, {

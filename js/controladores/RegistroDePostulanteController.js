@@ -1,4 +1,4 @@
-app.controller('RegistroDePostulanteCtrl', ['$scope', 'postulanteFactory', function($scope, PostulanteFactory) {
+app.controller('RegistroDePostulanteCtrl', ['$scope', 'PostulanteFactory', function($scope, PostulanteFactory) {
     $scope.postulante = {};
     $scope.registrarPostulante = function() {
       console.log('postulante', $scope.postulante);

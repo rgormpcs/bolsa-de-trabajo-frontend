@@ -28,7 +28,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         })
         .state('registroP', {
             url: "/registro-de-postulante",
-            templateUrl: "vistas/registro-de-Postulante.html",
+            templateUrl: "vistas/registro-de-postulante.html",
             controller: 'RegistroDePostulanteCtrl',
             data: {
                 credencial: false

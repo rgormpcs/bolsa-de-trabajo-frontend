@@ -9,5 +9,6 @@ app.controller('RegistroDeEmpleadorCtrl', ['$scope', 'EmpleadorFactory', functio
             function error(error) {
                 console.log('Error en ingreso de solicitud', error);
             });
+            
     }
 }]);

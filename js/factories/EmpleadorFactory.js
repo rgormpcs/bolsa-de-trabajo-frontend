@@ -8,4 +8,5 @@ app.factory('EmpleadorFactory', ['$resource', function($resource) {
         }
     });
     return factory;
+    
 }]);

@@ -45,6 +45,7 @@ html, body {
     margin: 0px;
     padding: 0px;
     height: 100%;
+    text-align: center;
 }
 #wrapper {
     padding-bottom: 81px;
@@ -56,7 +57,7 @@ html, body {
     background-color: #0086CD;
 }
 #content {
-  padding-top: 25px; 
+  padding-top: 25px;
 }
 
 #footer {

@@ -33,5 +33,5 @@ app.controller('OfertasEmpleadorCtrl', ['$scope', '$state', '$cookies', 'OfertaT
 
     // $scope.ofertas = [];
 
-    OfertaTrabajoFactory.
+  //  OfertaTrabajoFactory.
 }]);

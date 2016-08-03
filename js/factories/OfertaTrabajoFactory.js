@@ -15,6 +15,13 @@ app.factory('OfertaTrabajoFactory', ['$resource', function($resource) {
             params: {
                 idOfertaTrabajo: '@idOfertaTrabajo'
             }
+        },
+        updateOferta: {
+            url: 'http://localhost:1337/Empleador/updateOferta',
+            method: 'PUT',
+            params: {
+                idOfertaTrabajo: '@idOfertaTrabajo'
+            }
         }
     });
     return factory;

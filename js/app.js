@@ -53,7 +53,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('editar-perfil-empleador', {
             url: "/editar-perfil-empleador",
             templateUrl: "vistas/editar-perfil-empleador.html",
-            // controller: 'RegistroDeEmpleadorCtrl',
+            controller: 'EditarPerfilEmpleadorCtrl',
             data: {
                 credencial: true
             }

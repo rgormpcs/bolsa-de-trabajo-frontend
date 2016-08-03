@@ -17,13 +17,13 @@ app.controller('EditarPerfilEmpleadorCtrl', ['$scope', 'EmpleadorFactory', '$coo
         EmpleadorFactory.updateEmpleador({
             idEmpleador: $cookies.get('empleadorId')
         }, {
-            cedulaEmpleador: $scope.cedulaEmpleador,
-            nombreEmpleador: $scope.nombreEmpleador,
-            apellidoEmpleador: $scope.apellidoEmpleador,
-            telefonoEmpleador: $scope.telefonoEmpleador,
-            correoEmpleador: $scope.correoEmpleador,
-            nombreEmpresaEmpleador: $scope.nombreEmpresaEmpleador,
-            contraseniaEmpleador: $scope.contraseniaEmpleador,
+            cedulaEmpleador: $scope.empleador.cedulaEmpleador,
+            nombreEmpleador: $scope.empleador.nombreEmpleador,
+            apellidoEmpleador: $scope.empleador.apellidoEmpleador,
+            telefonoEmpleador: $scope.empleador.telefonoEmpleador,
+            correoEmpleador: $scope.empleador.correoEmpleador,
+            nombreEmpresaEmpleador: $scope.empleador.nombreEmpresaEmpleador,
+            contraseniaEmpleador: $scope.empleador.contraseniaEmpleador,
         }).$promise.then(
             function success(respuesta) {
                 console.log("empleador actualizado", respuesta);

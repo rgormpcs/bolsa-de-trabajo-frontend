@@ -18,8 +18,7 @@ app.factory('EmpleadorFactory', ['$resource', function($resource) {
             method: 'PUT',
             params: {
                 idEmpleador: '@idEmpleador'
-            },
-            isArray:true
+            }
         }
     });
     return factory;

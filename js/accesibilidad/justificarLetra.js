@@ -1,6 +1,8 @@
 function justificar() {
     // document.getElementById("myP").style.textAlign = "justify";
     document.body.style.textAlign = "justify";
+
+      console.log("justificó");
 }
 
 function noJustificar() {

@@ -26,10 +26,10 @@
     </div>
     <div id="content">
         <div class="container-fluid">
-            <div class="row content">
+            <div id="myP" class="row content">
                 <div class="col-sm-2 sidenav">
-                    <p ng-repeat="facultad in facultades">
-                        <a href="#">{{facultad.nombre}}</a>
+                    <p id="myP" ng-repeat="facultad in facultades">
+                        <a id="myP" href="#">{{facultad.nombre}}</a>
                     </p>
                 </div>
                 <div class="col-sm-8 text-left">
@@ -48,15 +48,15 @@
                     </table>
                 </div>
                 <div class="col-sm-2 sidenav">
-                    <div class="well">
-                      <p>Cambio tipo de Letra</p>
-                         <input type="button" value="Si" onClick="" />
-                         <input type="button" value="No" onClick="" />
+                    <div class="well3">
+                        <p>Cambio tipo de Letra</p>
+                        <input type="button" value="Si" onClick="dis()" />
+                        <input type="button" value="No" onClick="san()" />
                     </div>
                     <div class="well">
-                      <p>Justificar</p>
-                      <input type="button" value="Si" onClick="justificar()" />
-                      <input type="button" value="No" onClick="noJustificar()" />
+                        <p>Justificar</p>
+                        <input type="button" value="Si" onClick="justificar()" />
+                        <input type="button" value="No" onClick="noJustificar()" />
                     </div>
                     <div class="well">
                         <p>Tamaño Letra</p>

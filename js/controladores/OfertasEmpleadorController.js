@@ -1,40 +1,37 @@
-app.controller('OfertasEmpleadorCtrl', ['$scope', '$state', '$cookies', 'EmpleadorFactory', function($scope, $state, $cookies, EmpleadorFactory) {
+app.controller('OfertasEmpleadorCtrl', ['$scope', '$state', '$cookies', 'OfertaTrabajoFactory', function($scope, $state, $cookies, OfertaTrabajoFactory) {
     $scope.facultades = [{
-        clave:'ciencias',
-        nombre:'Facultad de Ciencias'
+        clave: 'ciencias',
+        nombre: 'Facultad de Ciencias'
     }, {
-        clave:'administrativas',
+        clave: 'administrativas',
         nombre: 'Facultad de Ciencias Administrativas'
     }, {
-        clave:'civil-ambiental',
+        clave: 'civil-ambiental',
         nombre: 'Facultad de Ingeniería Civil y Ambiental'
-    },
-    {
-        clave:'electrica-electronica',
+    }, {
+        clave: 'electrica-electronica',
         nombre: 'Facultad de Ingeniería Elétrica y Eléctronica'
-    },
-    {
-        clave:'geologia-petroleos',
+    }, {
+        clave: 'geologia-petroleos',
         nombre: 'Facultad de Ingeniería Geología y Petroleos'
-    },
-    {
-        clave:'mecanica',
+    }, {
+        clave: 'mecanica',
         nombre: 'Facultad de Ingeniría Mecánica'
-    },
-    {
-        clave:'sistemas',
+    }, {
+        clave: 'sistemas',
         nombre: 'Facultad de Ingeniería de Sistemas'
-    },
-    {
-        clave:'quimica-agro',
+    }, {
+        clave: 'quimica-agro',
         nombre: 'Facultad de Ingeniería Química y Agroindustría'
-    },
-    {
-        clave:'esfot',
+    }, {
+        clave: 'esfot',
         nombre: 'ESFOT'
-    },
-    {
-        clave:'prepo',
+    }, {
+        clave: 'prepo',
         nombre: 'Formación Básica'
     }];
+
+    // $scope.ofertas = [];
+
+    OfertaTrabajoFactory.
 }]);

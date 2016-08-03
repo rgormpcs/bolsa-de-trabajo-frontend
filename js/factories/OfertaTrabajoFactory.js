@@ -9,8 +9,8 @@ app.factory('OfertaTrabajoFactory', ['$resource', function($resource) {
                 idEmpleador: '@idEmpleador'
             }
         },
-        getOfertaTrabajo: {
-            url: 'http://localhost:1337/Empleador/getOfertaTrabajo',
+        getOfertaTrabajoPorEmpleador: {
+            url: 'http://localhost:1337/Empleador/getOfertaTrabajoPorEmpleador',
             method: 'GET',
             params: {
                 idOfertaTrabajo: '@idOfertaTrabajo'

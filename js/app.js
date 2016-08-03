@@ -50,6 +50,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
                 credencial: true
             }
         })
+        .state('editar-oferta-empleador', {
+            url: "/editar-oferta-empleador",
+            templateUrl: "vistas/editar-oferta-empleador.html",
+            controller: 'EditarOfertaCtrl',
+            data: {
+                credencial: true
+            }
+        })
         .state('editar-perfil-empleador', {
             url: "/editar-perfil-empleador",
             templateUrl: "vistas/editar-perfil-empleador.html",

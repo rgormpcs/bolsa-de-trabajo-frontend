@@ -1,17 +1,19 @@
 app.factory('OfertaTrabajoFactory', ['$resource', function($resource) {
-    var factory = $resource('http://localhost:1337/ofertaTrabajo/:idEmpleador', {
-        idEmpleador: '@idEmpleador'
+    var factory = $resource('http://localhost:1337/ofertaTrabajo/:idOfertaTrabajo', {
+        idOfertaTrabajo: '@idOfertaTrabajo'
     }, {
         registrarNuevaOfertaBE: {
             url: 'http://localhost:1337/ofertaTrabajo',
             method: 'POST',
-            data: $scope.ofertaTrabajo
+            params: {
+                idEmpleador: '@idEmpleador'
+            }
         },
         getOfertaTrabajo: {
             url: 'http://localhost:1337/Empleador/getOfertaTrabajo',
             method: 'GET',
             params: {
-                idEmpleador: '@idEmpleador'
+                idOfertaTrabajo: '@idOfertaTrabajo'
             }
         }
     });

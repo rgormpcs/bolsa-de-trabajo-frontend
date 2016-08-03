@@ -14,11 +14,12 @@ app.factory('EmpleadorFactory', ['$resource', function($resource) {
             }
         },
         updateEmpleador: {
+            url: 'http://localhost:1337/Empleador/updateEmpleador',
             method: 'PUT',
             params: {
                 idEmpleador: '@idEmpleador'
-            }
-
+            },
+            isArray:true
         }
     });
     return factory;

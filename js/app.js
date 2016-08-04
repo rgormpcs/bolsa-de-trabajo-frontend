@@ -65,6 +65,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
             data: {
                 credencial: true
             }
+        })
+        .state('postulaciones-postulante', {
+            url: "/postulaciones-postulante",
+            templateUrl: "vistas/postulaciones-postulante.html",
+            //  controller: 'PostulacionesPostulanteCtrl',
+            data: {
+                credencial: true
+            }
         });
     $urlRouterProvider.otherwise("/registro-de-empleador");
 });
@@ -75,13 +83,16 @@ app.run(function($rootScope, $cookies, $state) {
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams) {
         var credencial = toState.data.credencial;
         if (credencial) {
-            if ($cookies.get('empleadorId')) {
+            if ($cookies.get('empleadorId') ) {
+                console.log('éxito en ingreso');
+            } else if ($cookies.get('postulanteId')) {
                 console.log('éxito en ingreso');
             } else {
                 console.log('error en ingreso');
                 event.preventDefault();
                 return $state.go('login')
             }
+
         }
     });
 });

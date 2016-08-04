@@ -2,8 +2,8 @@ app.factory('PostulanteFactory', ['$resource', function($resource) {
     var factory = $resource('http://localhost:1337/Postulante/:idUsuario', {
         idUsuario: '@idUsuario'
     }, {
-        login: {
-            url: 'http://localhost:1337/Postulante/login',
+        loginPostulante: {
+            url: 'http://localhost:1337/Postulante/loginPostulante',
             method: 'POST'
         }
     });

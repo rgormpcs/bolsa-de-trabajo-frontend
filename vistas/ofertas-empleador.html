@@ -35,9 +35,9 @@
                 </div>
                 <div class="col-sm-8 text-left">
                     <table class="table table-striped">
-                        <tbody>
+                        <tbody ng-repeat="oferta in ofertas">
                             <tr>
-                                <td><a href="">Oferta 1...</a></td>
+                                <td><a href="">{{oferta.areaTrabajo}}</a></td>
                             </tr>
                         </tbody>
                     </table>

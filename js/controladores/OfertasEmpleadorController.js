@@ -33,5 +33,14 @@ app.controller('OfertasEmpleadorCtrl', ['$scope', '$state', '$cookies', 'OfertaT
 
     // $scope.ofertas = [];
 
-  //  OfertaTrabajoFactory.
+    OfertaTrabajoFactory.getOfertaTrabajoPorEmpleador({
+        idEmpleador: $cookies.get('empleadorId')
+    }).$promise.then(
+        function success(respuesta) {
+            console.log("ofertas", respuesta);
+            $scope.ofertas = respuesta;
+        },
+        function error(error) {
+            console.log(error);
+        });
 }]);

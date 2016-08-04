@@ -1,8 +1,8 @@
 app.controller('EditarOfertaCtrl', ['$scope', 'OfertaTrabajoFactory', '$cookies', function($scope, OfertaTrabajoFactory, $cookies) {
     // $scope.empleador = {};
 
-OfertaTrabajoFactory.getOfertaTrabajo({
-   idOfertaTrabajo: $cookies.get('ofertaId')
+OfertaTrabajoFactory.getOfertaTrabajoPorEmpleador({
+   empleadorId: $cookies.get('idOfertaTrabajo')
 }).$promise.then(
     function success(respuesta) {
         console.log("ofertaTrabajo", respuesta);
@@ -30,10 +30,14 @@ OfertaTrabajoFactory.getOfertaTrabajo({
             function success(respuesta) {
                 console.log("oferta actualizado", respuesta);
                 $scope.ofertaTrabajo = respuesta;
+                 oferta.mostrar = !oferta.mostrar
             },
             function error(error) {
                 console.log(error);
             });
     }
+
+
+    $scope.botonCrearDeshabilitado = false;
 
 }]);

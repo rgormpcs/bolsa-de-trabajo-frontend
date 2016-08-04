@@ -29,86 +29,88 @@
         <img class="logo" src="img/logo.png" alt="" />
     </div>
     <div class="col-sm-5"></div>
-    <div class="col-sm-2"></div>
-    <div class="col-sm-8">
-        <h2><center>Actualizar Oferta</center></h2>
-        <!--engine repeat-->
-        <div class="row">
-            <div class="col-sm-4 text-center" ng-repeat="oferta in ofertas" ng-init="oferta.mostrar = true">
-                <div ng-show="oferta.mostrar">
-                    <h2>Area: {{ofertaTrabajo.areaTrabajo}} </h2>
-                    <p>Tipo: {{ofertaTrabajo.tipoDePuestoTrabajo}}</p>
-                    <p>Fecha de Publicación: {{ofertaTrabajo.fechaInicioPublicacionTrabajo | date:'medium'}}</p>
-                    <button class="btn btn-block btn-warning" ng-click="oferta.mostrar = !oferta.mostrar">Editar</button>
-                </div>
+</div>
+<div class="col-sm-2"></div>
+<div class="col-sm-8">
+    <h2><center>Editar de Oferta</center></h2>
 
-                <div ng-hide="oferta.mostrar">
-                    <form class="form-horizontal">
-                        <fieldset>
-                            <div class="form-group">
-                                <label for="inputArea" class="col-lg-2 control-label">Área</label>
-                                <div class="col-lg-10">
-                                    <input type="text" class="form-control" id="inputArea" placeholder="Área" ng-model="ofertaTrabajo.areaTrabajo">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputTipoPuesto" class="col-lg-2 control-label">Tipo de Puesto</label>
-                                <div class="col-lg-10">
-                                    <input type="text" class="form-control" id="inputTipoPuesto" placeholder="Tipo de Puesto" ng-model="ofertaTrabajo.tipoDePuestoTrabajo">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputFacultad" class="col-lg-2 control-label">Facultad</label>
-                                <div class="col-lg-10">
-                                    <input type="text" class="form-control" id="inputFacultad" placeholder="Facultad" ng-model="ofertaTrabajo.facultadTrabajo">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputRemuneracion" class="col-lg-2 control-label">Remuneración</label>
-                                <div class="col-lg-10">
-                                    <input type="text" class="form-control" id="inputRemuneracion" placeholder="Remuneración" ng-model="ofertaTrabajo.remuneracion">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputDireccion" class="col-lg-2 control-label">Dirección</label>
-                                <div class="col-lg-10">
-                                    <input type="text" class="form-control" id="inputDireccion" placeholder="Dirección" ng-model="ofertaTrabajo.direccionTrabajo">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputDescripcion" class="col-lg-2 control-label">Descripción</label>
-                                <div class="col-lg-10">
-                                    <input type="text" class="form-control" id="inputDescripcion" placeholder="Deescripcion" ng-model="ofertaTrabajo.descripcionTrabajo">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputFechaInicio" class="col-lg-2 control-label">Fecha Inicio</label>
-                                <div class="col-lg-10">
-                                    <input type="date" class="form-control" id="inputFechaInicio" placeholder="Fecha Inicio" ng-model="ofertaTrabajo.fechaInicioPublicacionTrabajo">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputFechaFin" class="col-lg-2 control-label">Fecha Fin</label>
-                                <div class="col-lg-10">
-                                    <input type="date" class="form-control" id="inputFechaFin" placeholder="Fecha Fin" ng-model="ofertaTrabajo.fechaFinPublicacionTrabajo">
-                                </div>
-                            </div>
-                        </fieldset>
-                    </form>
-                    <div class="col-sm-2"></div>
+<!--engine repeat-->
+<div ng-repeat="ofertaTrabajo in ofertaTrabajo">
+     <p>Área: {{ofertaTrabajo.areaTrabajo}}</p> <br>
+     <p>Tipo de Puesto: {{ofertaTrabajo.tipoDePuestoTrabajo}}</p><br>
+     <p>Facultad: {{ofertaTrabajo.facultadTrabajo}}</p> <br>
+     <p>Remuneración: {{ofertaTrabajo.remuneracion}}</p><br>
+     <p>Dirección: {{ofertaTrabajo.direccionTrabajo}}</p> <br>
+     <p>Descripción: {{ofertaTrabajo.descripcionTrabajo}}</p><br>
+     <p>Fecha Inicio: {{ofertaTrabajo.fechaInicioPublicacionTrabajo}}</p> <br>
+     <p>Fecha Fin: {{ofertaTrabajo.fechaFinPublicacionTrabajo}}</p><br>
 
-                    <div class="row">
-                        <div class="col-sm-4"></div>
-                        <div class="col-sm-4">
-                            <div class="form-group">
-                                <div class="col-lg-10 col-lg-offset-2">
-                                    <button type="reset" class="btn btn-default" ng-disabled="botonCrearDeshabilitado" ng-click="oferta.mostrar = !oferta.mostrar">Cancelar</button>
-                                    <button type="submit" class="btn btn-primary" ng-disabled="botonCrearDeshabilitado" ng-click="editarOferta()">Actualizar</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4"></div>
-                    </div>
+</div>
+
+    <form class="form-horizontal">
+        <fieldset>
+            <div class="form-group">
+                <label for="inputArea" class="col-lg-2 control-label">Área</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="inputArea" placeholder="Área" ng-model="ofertaTrabajo.areaTrabajo">
                 </div>
             </div>
+            <div class="form-group">
+                <label for="inputTipoPuesto" class="col-lg-2 control-label">Tipo de Puesto</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="inputTipoPuesto" placeholder="Tipo de Puesto" ng-model="ofertaTrabajo.tipoDePuestoTrabajo">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputFacultad" class="col-lg-2 control-label">Facultad</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="inputFacultad" placeholder="Facultad" ng-model="ofertaTrabajo.facultadTrabajo">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputRemuneracion" class="col-lg-2 control-label">Remuneración</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="inputRemuneracion" placeholder="Remuneración" ng-model="ofertaTrabajo.remuneracion">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputDireccion" class="col-lg-2 control-label">Dirección</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="inputDireccion" placeholder="Dirección" ng-model="ofertaTrabajo.direccionTrabajo">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputDescripcion" class="col-lg-2 control-label">Descripción</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="inputDescripcion" placeholder="Deescripcion" ng-model="ofertaTrabajo.descripcionTrabajo">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputFechaInicio" class="col-lg-2 control-label">Fecha Inicio</label>
+                <div class="col-lg-10">
+                    <input type="date" class="form-control" id="inputFechaInicio" placeholder="Fecha Inicio" ng-model="ofertaTrabajo.fechaInicioPublicacionTrabajo">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputFechaFin" class="col-lg-2 control-label">Fecha Fin</label>
+                <div class="col-lg-10">
+                    <input type="date" class="form-control" id="inputFechaFin" placeholder="Fecha Fin" ng-model="ofertaTrabajo.fechaFinPublicacionTrabajo">
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<div class="col-sm-2"></div>
+
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="reset" class="btn btn-default">Cancelar</button>
+                <button type="submit" class="btn btn-primary" ng-click="editarOferta()">Actualizar</button>
+            </div>
         </div>
+    </div>
+    <div class="col-sm-4"></div>
+</div>

@@ -1,4 +1,5 @@
-<nav class="navbar navbar-default">
+<div id="wrapper">
+   <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -34,8 +35,8 @@
     </div>
     <div class="col-sm-5"></div>
 </div>
-<div class="col-sm-2"></div>
-<div class="col-sm-8">
+<div class="col-sm-1"></div>
+<div class="col-sm-9">
     <h2><center>Registro de Empleador</center></h2>
     <form class="form-horizontal">
         <fieldset>
@@ -84,18 +85,40 @@
             </div>
         </fieldset>
     </form>
-</div>
-<div class="col-sm-2"></div>
 
-<div class="row">
-    <div class="col-sm-4"></div>
-    <div class="col-sm-4">
-        <div class="form-group">
-            <div class="col-lg-10 col-lg-offset-2">
-                <button type="reset" class="btn btn-default">Cancelar</button>
-                <button type="submit" class="btn btn-primary" ng-click="registrarEmpleador()">Registrar</button>
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <button type="reset" class="btn btn-default">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" ng-click="registrarEmpleador()">Registrar</button>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-sm-4"></div>
+        <div class="col-sm-4"></div>
+    </div>    
 </div>
+
+<div class="col-sm-2 sidenav">
+    <div class="well">
+        <p>Cambio tipo de Letra</p>
+        <input type="button" value="Si" onClick="dis()" />
+        <input type="button" value="No" onClick="san()" />
+    </div>
+    <div class="well">
+        <p>Justificar</p>
+        <input type="button" value="Si" onClick="justificar()" />
+        <input type="button" value="No" onClick="noJustificar()" />
+    </div>
+    <div class="well">
+        <p>Tamaño Letra</p>
+        <input type="button" value="-" onClick="zoomOut()" />
+        <input type="button" value="+" onClick="zoomIn()" />
+    </div>
+</div>
+    
+</div>
+
+
+

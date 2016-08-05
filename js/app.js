@@ -85,7 +85,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('postulaciones-realizadas', {
             url: "/postulaciones-realizadas",
             templateUrl: "vistas/postulante/postulaciones-realizadas.html",
-            // controller: 'PostulacionesPostulanteCtrl',
+            controller: 'PostulacionesRealizadasCtrl',
             data: {
                 credencial: true
             }

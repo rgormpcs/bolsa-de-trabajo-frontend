@@ -20,7 +20,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         })
         .state('registro', {
             url: "/registro-de-empleador",
-            templateUrl: "vistas/registro-de-empleador.html",
+            templateUrl: "vistas/empleador/registro-de-empleador.html",
             controller: 'RegistroDeEmpleadorCtrl',
             data: {
                 credencial: false
@@ -28,7 +28,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         })
         .state('registroP', {
             url: "/registro-de-postulante",
-            templateUrl: "vistas/registro-de-postulante.html",
+            templateUrl: "vistas/postulante/registro-de-postulante.html",
             controller: 'RegistroDePostulanteCtrl',
             data: {
                 credencial: false
@@ -36,7 +36,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         })
         .state('registro-de-oferta', {
             url: "/registro-de-oferta",
-            templateUrl: "vistas/registro-de-oferta.html",
+            templateUrl: "vistas/empleador/egistro-de-oferta.html",
             controller: 'RegistroDeOfertaCtrl',
             data: {
                 credencial: true
@@ -44,7 +44,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         })
         .state('ofertas-empleador', {
             url: "/ofertas-empleador",
-            templateUrl: "vistas/ofertas-empleador.html",
+            templateUrl: "vistas/empleador/ofertas-empleador.html",
             controller: 'OfertasEmpleadorCtrl',
             data: {
                 credencial: true
@@ -52,7 +52,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         })
         .state('editar-oferta-empleador', {
             url: "/editar-oferta-empleador",
-            templateUrl: "vistas/editar-oferta-empleador.html",
+            templateUrl: "vistas/empleador/editar-oferta-empleador.html",
             controller: 'EditarOfertaCtrl',
             data: {
                 credencial: true
@@ -60,7 +60,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         })
         .state('editar-perfil-empleador', {
             url: "/editar-perfil-empleador",
-            templateUrl: "vistas/editar-perfil-empleador.html",
+            templateUrl: "vistas/empleador/editar-perfil-empleador.html",
             controller: 'EditarPerfilEmpleadorCtrl',
             data: {
                 credencial: true
@@ -68,7 +68,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         })
         .state('ver-postulantes-de-oferta', {
             url: "/ver-postulantes-de-oferta/:idOferta",
-            templateUrl: "vistas/ver-postulantes-de-oferta.html",
+            templateUrl: "vistas/empleador/ver-postulantes-de-oferta.html",
             controller: 'VerPostulantesDeOfertaCtrl',
             data: {
                 credencial: true
@@ -76,31 +76,36 @@ app.config(function($stateProvider, $urlRouterProvider) {
         })
         .state('postulaciones-postulante', {
             url: "/postulaciones-postulante",
-            templateUrl: "vistas/postulaciones-postulante.html",
-            //  controller: 'PostulacionesPostulanteCtrl',
+            templateUrl: "vistas/postulante/postulaciones-postulante.html",
+            controller: 'PostulacionesPostulanteCtrl',
             data: {
                 credencial: true
             }
         })
         .state('postulaciones-realizadas', {
             url: "/postulaciones-realizadas",
-            templateUrl: "vistas/postulaciones-realizadas.html",
-            //  controller: 'PostulacionesPostulanteCtrl',
+            templateUrl: "vistas/postulante/postulaciones-realizadas.html",
+            // controller: 'PostulacionesPostulanteCtrl',
             data: {
                 credencial: true
             }
         })
         .state('editar-perfil-postulante', {
             url: "/editar-perfil-postulante",
-            templateUrl: "vistas/editar-perfil-postulante.html",
+            templateUrl: "vistas/postulante/editar-perfil-postulante.html",
             //  controller: 'PostulacionesPostulanteCtrl',
             data: {
                 credencial: true
             }
+        })
+        .state('ver-oferta', {
+            url: "/ver-oferta/:idOferta",
+            templateUrl: "vistas/postulante/ver-oferta.html",
+             controller: 'VerOfertaCtrl',
+            data: {
+                credencial: true
+            }
         });
-
-
-
 
     $urlRouterProvider.otherwise("/registro-de-empleador");
 });
@@ -111,7 +116,7 @@ app.run(function($rootScope, $cookies, $state) {
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams) {
         var credencial = toState.data.credencial;
         if (credencial) {
-            if ($cookies.get('empleadorId') ) {
+            if ($cookies.get('empleadorId')) {
                 console.log('éxito en ingreso');
             } else if ($cookies.get('postulanteId')) {
                 console.log('éxito en ingreso');

@@ -36,7 +36,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         })
         .state('registro-de-oferta', {
             url: "/registro-de-oferta",
-            templateUrl: "vistas/empleador/egistro-de-oferta.html",
+            templateUrl: "vistas/empleador/registro-de-oferta.html",
             controller: 'RegistroDeOfertaCtrl',
             data: {
                 credencial: true
@@ -93,7 +93,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('editar-perfil-postulante', {
             url: "/editar-perfil-postulante",
             templateUrl: "vistas/postulante/editar-perfil-postulante.html",
-            //  controller: 'PostulacionesPostulanteCtrl',
+            controller: 'EditarPerfilPostulanteCtrl',
             data: {
                 credencial: true
             }
@@ -101,7 +101,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('ver-oferta', {
             url: "/ver-oferta/:idOferta",
             templateUrl: "vistas/postulante/ver-oferta.html",
-             controller: 'VerOfertaCtrl',
+            controller: 'VerOfertaCtrl',
             data: {
                 credencial: true
             }

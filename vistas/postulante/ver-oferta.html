@@ -1,42 +1,70 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#/"><img src="img/work.png" alt="" /></a>
+            <a class="navbar-brand" href="#/postulaciones-realizadas"><img src="img/work.png" alt="" /></a>
         </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#/">Inicio <span class="sr-only">(current)</span></a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Registro <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#/registro-de-postulante">Postulante</a></li>
-                        <li><a href="#/registro-de-empleador">Empleador</a></li>
-                    </ul>
-                </li>
+                <li class="active"><a href="#/postulaciones-postulante">Postulante</a></li>
+                <li><a href="#/postulaciones-realizadas">Mis Postulaciones</a></li>
+                <li><a href="#/">Mi CV</a></li>
+                <li><a href="#/editar-perfil-postulante">Editar Perfil</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#/login">Ingreso</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<div>
-    <p>
-      {{oferta.areaTrabajo}}
-    </p>
-    <p>
-      {{oferta.remuneracion}}
-    </p>
-    <p>
-      {{oferta.tipoDePuestoTrabajo}}
-    </p>
+<div id="content">
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-2 sidenav">
+                <p ng-repeat="facultad in facultades">
+                    <a href="#">{{facultad.nombre}}</a>
+                </p>
+            </div>
+            <div class="col-sm-8 text-left">
+                <table class="table table-striped" ALIGN=center>
+                    <div ALIGN=center>
+                        <p>
+                            {{oferta.areaTrabajo}}
+                        </p>
+                        <p>
+                            {{oferta.remuneracion}}
+                        </p>
+                        <p>
+                            {{oferta.tipoDePuestoTrabajo}}
+                        </p>
+                    </div>
+                    <div ALIGN=center>
+                        <button type="button" name="button" ng-click="postular()">Postular</button>
+                    </div>
+                </table>
+            </div>
+            <div class="col-sm-2 sidenav">
+                <div class="well">
+                    <p>Cambio tipo de Letra</p>
+                    <input type="button" value="Si" onClick="" />
+                    <input type="button" value="No" onClick="" />
+                </div>
+                <div class="well">
+                    <p>Justificar</p>
+                    <input type="button" value="Si" onClick="justificar()" />
+                    <input type="button" value="No" onClick="noJustificar()" />
+                </div>
+                <div class="well">
+                    <p>Tamaño Letra</p>
+                    <input type="button" value="-" onClick="zoomOut()" />
+                    <input type="button" value="+" onClick="zoomIn()" />
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-<button type="button" name="button" ng-click="postular()">Postular</button>

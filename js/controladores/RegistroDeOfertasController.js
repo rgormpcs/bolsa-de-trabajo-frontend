@@ -1,7 +1,8 @@
-app.controller('RegistroDeOfertaCtrl', ['$scope', 'OfertaTrabajoFactory', function($scope, OfertaTrabajoFactory) {
+app.controller('RegistroDeOfertaCtrl', ['$scope', 'OfertaTrabajoFactory', '$cookies', function($scope, OfertaTrabajoFactory, $cookies) {
     $scope.ofertaTrabajo = {};
     $scope.registrarNuevaOferta = function() {
-      console.log('Nueva Oferta', $scope.ofertaTrabajo);
+        $scope.ofertaTrabajo.idEmpleador = $cookies.get('empleadorId');
+        console.log('Nueva Oferta', $scope.ofertaTrabajo);
         OfertaTrabajoFactory.save($scope.ofertaTrabajo).$promise.then(function success(respuesta) {
                 console.log('éxito en ingreso de solicitud', respuesta);
                 $scope.ofertaTrabajo = {};

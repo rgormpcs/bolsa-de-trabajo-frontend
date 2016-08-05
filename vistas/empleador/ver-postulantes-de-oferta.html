@@ -1,0 +1,30 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/ofertas-empleador"><img src="img/work.png" alt="" /></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#/ofertas-empleador">Ofertas</a></li>
+                <li><a href="#/registro-de-oferta">Nueva Oferta</a></li>
+                <li><a href="#/editar-oferta-empleador">Editar Oferta</a></li>
+                <li><a href="#/editar-perfil-empleador">Editar Perfil</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div ng-repeat="postulante in postulantes">
+  <p>
+    {{postulante.nombrePostulante}} {{postulante.apellidoPostulante}} - {{postulante.celularPostulante}}
+  </p>
+</div>

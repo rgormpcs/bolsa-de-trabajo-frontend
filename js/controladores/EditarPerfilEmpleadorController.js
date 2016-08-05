@@ -15,22 +15,22 @@ app.controller('EditarPerfilEmpleadorCtrl', ['$scope', 'EmpleadorFactory', '$coo
     $scope.editarEmpleador = function() {
         console.log('empleador', $scope.empleador);
         EmpleadorFactory.updateEmpleador({
-                idEmpleador:$cookies.get('empleadorId')
-            },
-            $scope.empleador).$promise.then(
+            idEmpleador: $cookies.get('empleadorId')
+        }, {
+            cedulaEmpleador: $scope.empleador.cedulaEmpleador,
+            nombreEmpleador: $scope.empleador.nombreEmpleador,
+            apellidoEmpleador: $scope.empleador.apellidoEmpleador,
+            telefonoEmpleador: $scope.empleador.telefonoEmpleador,
+            correoEmpleador: $scope.empleador.correoEmpleador,
+            nombreEmpresaEmpleador: $scope.empleador.nombreEmpresaEmpleador,
+            contraseniaEmpleador: $scope.empleador.contraseniaEmpleador,
+        }).$promise.then(
             function success(respuesta) {
                 console.log("empleador actualizado", respuesta);
                 $scope.empleador = respuesta;
             },
             function error(error) {
                 console.log(error);
-            });
-        EmpleadorFactory.save($scope.empleador).$promise.then(function success(respuesta) {
-                console.log('éxito en ingreso de solicitud', respuesta);
-                $scope.empleador = {};
-            },
-            function error(error) {
-                console.log('Error en ingreso de solicitud', error);
             });
     }
 }]);

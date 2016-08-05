@@ -42,11 +42,38 @@
                 <input type="password" class="form-control" id="inputEmail" placeholder="Contraseña" ng-model="usuarioLogin.contrasenia">
             </div>
         </div>
+        <!--Radio button-->
+        <!--    <div class="container">
+          <form role="form">
+            <label class="radio-inline">
+              <input type="radio" name="optradio">Empleador
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="optradio">Postulante
+            </label>
+          </form>
+        </div>-->
+        <!--Botones de ingreso
         <div class="form-group">
             <div class="col-lg-10 col-lg-offset-2">
                 <button type="reset" class="btn btn-default">Cancelar</button>
                 <button type="submit" class="btn btn-primary" ng-click="login()">Ingresar</button>
             </div>
-        </div>
+        </div>-->
     </fieldset>
 </form>
+
+<form name="fcontacto">
+      <p>
+        <br />
+        <input type="radio" name="Conocido" value="Postulante" id="Conocido_0" onclick="mostrarReferenciaPostulante();" /> Postulante
+        <input type="radio" name="Conocido" value="Empleador" id="Conocido_1" onclick="mostrarReferenciaEmpleador();" /> Empleador
+    </p>
+    <div class="col-lg-10 col-lg-offset-2" id="postulante" style="display:none;">
+        <button type="reset" class="btn btn-default">Cancelar</button>
+        <button type="submit" class="btn btn-primary" ng-click="loginPostulante()">Ingresar Po</button>
+    </div>
+    <div class="col-lg-10 col-lg-offset-2" id="empleador" style="display:none;">
+        <button type="reset" class="btn btn-default">Cancelar</button>
+        <button type="submit" class="btn btn-primary" ng-click="login()">Ingresar Em</button>
+    </div>

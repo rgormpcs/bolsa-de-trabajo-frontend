@@ -4,6 +4,7 @@ app.controller('PostulacionesPostulanteCtrl', ['$scope', 'OfertaTrabajoFactory',
             function success(respuesta) {
                 console.log("ofertas", respuesta);
                 $scope.ofertas = respuesta;
+                
             },
             function error(error) {
                 console.log(error);

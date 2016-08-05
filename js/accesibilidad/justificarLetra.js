@@ -7,5 +7,5 @@ function justificar() {
 
 function noJustificar() {
     //document.getElementById("myP").style.textAlign = "left";
-    document.body.style.textAlign = "left";
+    document.body.style.textAlign = "center";
 }

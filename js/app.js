@@ -81,7 +81,27 @@ app.config(function($stateProvider, $urlRouterProvider) {
             data: {
                 credencial: true
             }
+        })
+        .state('postulaciones-realizadas', {
+            url: "/postulaciones-realizadas",
+            templateUrl: "vistas/postulaciones-realizadas.html",
+            //  controller: 'PostulacionesPostulanteCtrl',
+            data: {
+                credencial: true
+            }
+        })
+        .state('editar-perfil-postulante', {
+            url: "/editar-perfil-postulante",
+            templateUrl: "vistas/editar-perfil-postulante.html",
+            //  controller: 'PostulacionesPostulanteCtrl',
+            data: {
+                credencial: true
+            }
         });
+
+
+
+
     $urlRouterProvider.otherwise("/registro-de-empleador");
 });
 

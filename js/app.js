@@ -66,6 +66,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
                 credencial: true
             }
         })
+        .state('ver-postulantes-de-oferta', {
+            url: "/ver-postulantes-de-oferta/:idOferta",
+            templateUrl: "vistas/ver-postulantes-de-oferta.html",
+            controller: 'VerPostulantesDeOfertaCtrl',
+            data: {
+                credencial: true
+            }
+        })
         .state('postulaciones-postulante', {
             url: "/postulaciones-postulante",
             templateUrl: "vistas/postulaciones-postulante.html",

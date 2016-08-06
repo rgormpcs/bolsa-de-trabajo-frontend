@@ -85,19 +85,27 @@
                 <div class="form-group">
                     <label for="inputEstadoCivil" class="col-lg-2 control-label">Estado Civil</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" id="inputEstadoCivil" placeholder="Estado Civil" ng-model="postulante.estadoCivilPostulante">
+                        <!-- <input type="text" class="form-control" id="inputEstadoCivil" placeholder="Estado Civil" ng-model="postulante.estadoCivilPostulante"> -->
+                      <select class="form-control" id="inputEstadoCivil" placeholder="Estado Civil" ng-model="postulante.estadoCivilPostulante">
+                            <option value="Soltero">Soltero</option>
+                            <option value="Casado">Casado</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputGenero" class="col-lg-2 control-label">Género</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" id="inputGenero" placeholder="Género" ng-model="postulante.generoPostulante">
+                        <!-- <input type="text" class="form-control" id="inputGenero" placeholder="Género" ng-model="postulante.generoPostulante"> -->
+                        <select class="form-control" id="inputGenero" placeholder="Género" ng-model="postulante.genroPostulante">
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputFechaNacimiento" class="col-lg-2 control-label">Fecha de Nacimiento</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" id="inputFechaNacimiento" placeholder="Fecha de Nacimiento" ng-model="postulante.fechaNacimientoPostulante">
+                        <input type="date" class="form-control" id="inputFechaNacimiento" placeholder="Fecha de Nacimiento" ng-model="postulante.fechaNacimientoPostulante">
                     </div>
                 </div>
                 <div class="form-group">

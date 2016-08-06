@@ -33,11 +33,20 @@
                         <a href="#">{{facultad.nombre}}</a>
                     </p>
                 </div>
-                <div class="col-sm-8 text-left">
+                <div class="col-sm-8 text-left" >
                     <table class="table table-striped">
                         <tbody>
+                          <tr>
+                              <th>Área</th>
+                              <th>Tipo de Puesto de Trabajo</th>
+                              <th>Fecha de Publicación</th>
+                              <th><span class="glyphicon glyphicon-remove" aria-hidden="true" ></span></th>
+                          </tr>
                             <tr ng-repeat="oferta in ofertas">
                                 <td>{{oferta.areaTrabajo}}</td>
+                                <td>{{oferta.tipoDePuestoTrabajo}}</td>
+                                <td>{{oferta.fechaInicioPublicacionTrabajo}}</td>
+                                <td>  <button type="button" class="btn btn-primary" ALIGN=center name="button" ng-click="">Eliminar</button></td>
                             </tr>
                         </tbody>
                     </table>

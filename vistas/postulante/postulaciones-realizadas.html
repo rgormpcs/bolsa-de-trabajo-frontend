@@ -36,8 +36,8 @@
                 <div class="col-sm-8 text-left">
                     <table class="table table-striped">
                         <tbody>
-                            <tr>
-                                <td>asdas</td>
+                            <tr ng-repeat="oferta in ofertas">
+                                <td>{{oferta.areaTrabajo}}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -45,8 +45,8 @@
                 <div class="col-sm-2 sidenav">
                     <div class="well">
                       <p>Cambio tipo de Letra</p>
-                         <input type="button" value="Si" onClick="dis()" />
-                         <input type="button" value="No" onClick="san()" />
+                         <input type="button" value="Si" onClick="" />
+                         <input type="button" value="No" onClick="" />
                     </div>
                     <div class="well">
                       <p>Justificar</p>

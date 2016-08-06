@@ -1,6 +1,6 @@
-app.controller('VerOfertaCtrl', ['$scope', 'OfertaTrabajoFactory', '$stateParams', 'PostulanteFactory', '$cookies',
+app.controller('VerOfertaCtrl', ['$scope', 'OfertaTrabajoFactory', '$stateParams', 'PostulacionFactory', '$cookies',
 
-    function($scope, OfertaTrabajoFactory, $stateParams, PostulanteFactory, $cookies) {
+    function($scope, OfertaTrabajoFactory, $stateParams, PostulacionFactory, $cookies) {
         OfertaTrabajoFactory.get({
             id: $stateParams.idOferta
         }).$promise.then(
@@ -13,7 +13,7 @@ app.controller('VerOfertaCtrl', ['$scope', 'OfertaTrabajoFactory', '$stateParams
             });
 
         $scope.postular = function() {
-            PostulanteFactory.save({
+            PostulacionFactory.save({
                 idPostulante: $cookies.get('postulanteId'),
                 idOfertaTrabajo: $stateParams.idOferta
             }).$promise.then(

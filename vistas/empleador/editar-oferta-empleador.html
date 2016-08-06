@@ -1,62 +1,54 @@
-<div id="wrapper">
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
 
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#/ofertas-empleador"><img src="img/work.png" alt="" /></a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#/ofertas-empleador">Ofertas</a></li>
-                    <li><a href="#/registro-de-oferta">Nueva Oferta</a></li>
-                    <li><a href="#/editar-oferta-empleador">Editar Oferta</a></li>
-                    <li><a href="#/editar-perfil-empleador">Editar Perfil</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
-                </ul>
-            </div>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/ofertas-empleador"><img src="img/work.png" alt="" /></a>
         </div>
-    </nav>
-    <!-- TODO: cambiar for, id, etc ... -->
-    <div class="row">
-        <div class="col-sm-5"></div>
-        <div class="col-sm-2">
-            <img class="logo" src="img/logo.png" alt="" />
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#/ofertas-empleador">Ofertas</a></li>
+                <li><a href="#/registro-de-oferta">Nueva Oferta</a></li>
+                <li><a href="#/editar-oferta-empleador">Editar Oferta</a></li>
+                <li><a href="#/editar-perfil-empleador">Editar Perfil</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
+            </ul>
         </div>
-        <div class="col-sm-5"></div>
     </div>
-    <div class="col-sm-1"></div>
-    <div class="col-sm-9">
-        <h2><center>Editar de Oferta</center></h2>
+</nav>
+<!-- TODO: cambiar for, id, etc ... -->
+<div class="row">
+    <div class="col-sm-5"></div>
+    <div class="col-sm-2">
+        <img class="logo" src="img/logo.png" alt="" />
+    </div>
+    <div class="col-sm-5"></div>
+</div>
+<div class="col-sm-2"></div>
+<div class="col-sm-8">
+    <h2><center>Editar Oferta</center></h2>
 
-        <!--engine repeat-->
-        <div ng-repeat="ofertaTrabajo in ofertaTrabajo">
-            <p>Área: {{ofertaTrabajo.areaTrabajo}}</p>
-            <br>
-            <p>Tipo de Puesto: {{ofertaTrabajo.tipoDePuestoTrabajo}}</p>
-            <br>
-            <p>Facultad: {{ofertaTrabajo.facultadTrabajo}}</p>
-            <br>
-            <p>Remuneración: {{ofertaTrabajo.remuneracion}}</p>
-            <br>
-            <p>Dirección: {{ofertaTrabajo.direccionTrabajo}}</p>
-            <br>
-            <p>Descripción: {{ofertaTrabajo.descripcionTrabajo}}</p>
-            <br>
-            <p>Fecha Inicio: {{ofertaTrabajo.fechaInicioPublicacionTrabajo}}</p>
-            <br>
-            <p>Fecha Fin: {{ofertaTrabajo.fechaFinPublicacionTrabajo}}</p>
-            <br>
+    <!--engine repeat-->
+    <div ng-repeat="ofertaTrabajo in ofertasTrabajo" class="container-fluid">
+        <p>
+            <h3><b>Área:</b></h3> {{ofertaTrabajo.areaTrabajo}}</p>
 
-        </div>
+        <p>
+            <h3><b>Tipo de Puesto:</b></h3> {{ofertaTrabajo.tipoDePuestoTrabajo}}</p>
 
-        <form class="form-horizontal">
+        <p>
+            <h3><b>Fecha Fin:</b></h3> {{ofertaTrabajo.fechaFinPublicacionTrabajo | date:'medium'}}</p>
+        <br>
+        <button ng-click="ofertaTrabajo.visible=!ofertaTrabajo.visible" class="btn btn-primary">Editar</button>
+        <br>
+        <br>
+        <form class="form-horizontal" ng-show=" ofertaTrabajo.visible">
             <fieldset>
                 <div class="form-group">
                     <label for="inputArea" class="col-lg-2 control-label">Área</label>
@@ -107,42 +99,19 @@
                     </div>
                 </div>
             </fieldset>
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-2">
+                            <button type="reset" class="btn btn-default">Cancelar</button>
+                            <button type="submit" class="btn btn-primary" ng-click="editarOferta(ofertaTrabajo)">Actualizar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4"></div>
+            </div>
         </form>
     </div>
-
-    <div class="col-sm-2 sidenav">
-        <div class="well">
-            <p>Cambio tipo de Letra</p>
-            <input type="button" value="Si" onClick="dis()" />
-            <input type="button" value="No" onClick="san()" />
-        </div>
-        <div class="well">
-            <p>Justificar</p>
-            <input type="button" value="Si" onClick="justificar()" />
-            <input type="button" value="No" onClick="noJustificar()" />
-        </div>
-        <div class="well">
-            <p>Tamaño Letra</p>
-            <input type="button" value="-" onClick="zoomOut()" />
-            <input type="button" value="+" onClick="zoomIn()" />
-        </div>
-    </div>
-
-    <div class="col-sm-2"></div>
-
-    <div class="row">
-        <div class="col-sm-4"></div>
-        <div class="col-sm-4">
-            <div class="form-group">
-                <div class="col-lg-10 col-lg-offset-2">
-                    <button type="reset" class="btn btn-default">Cancelar</button>
-                    <button type="submit" class="btn btn-primary" ng-click="editarOferta()">Actualizar</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4"></div>
-    </div>
-
-
-
 </div>
+<div class="col-sm-2"></div>

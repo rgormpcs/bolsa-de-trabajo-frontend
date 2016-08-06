@@ -1,6 +1,6 @@
 app.controller('EditarOfertaCtrl', ['$scope', '$stateParams', 'OfertaTrabajoFactory', 'EmpleadorFactory', '$cookies', function($scope, $stateParams, OfertaTrabajoFactory, EmpleadorFactory, $cookies) {
-    // $scope.empleador = {};
-console.log("id empelador vaaaaaa???",$stateParams.idEmpleador);
+    $scope.laOferta = {};
+    console.log("id empelador vaaaaaa???", $stateParams.idEmpleador);
 
     OfertaTrabajoFactory.getOfertaTrabajoPorEmpleador({
         //idEmpleador: $stateParams.idEmpleador
@@ -8,38 +8,34 @@ console.log("id empelador vaaaaaa???",$stateParams.idEmpleador);
     }).$promise.then(
         function success(respuesta) {
             console.log("ofertaTrabajo", respuesta);
-            $scope.ofertaTrabajo = respuesta;
+            $scope.ofertasTrabajo = respuesta;
         },
         function error(error) {
             console.log(error);
         });
 
-    $scope.editarOferta = function() {
-        console.log('ofertaTrabajo', $scope.ofertaTrabajo);
+    $scope.editarOferta = function(oferta) {
+        console.log('la ofertaTrabajo', oferta);
         OfertaTrabajoFactory.updateOferta({
-            idOfertaTrabajo: $cookies.get('OfertaTrabajoId')
+            //idEmpleador: $cookies.get('empleadoId')
+            idOfertaTrabajo: oferta.id
         }, {
-            areaTrabajo: $scope.ofertaTrabajo.areaTrabajo,
-            tipoDePuestoTrabajo: $scope.ofertaTrabajo.tipoDePuestoTrabajo,
-            facultadTrabajo: $scope.ofertaTrabajo.facultadTrabajo,
-            remuneracion: $scope.ofertaTrabajo.remuneracion,
-            direccionTrabajo: $scope.ofertaTrabajo.direccionTrabajo,
-            descripcionTrabajo: $scope.ofertaTrabajo.descripcionTrabajo,
-            fechaInicioPublicacionTrabajo: $scope.ofertaTrabajo.fechaInicioPublicacionTrabajo,
-            fechaFinPublicacionTrabajo: $scope.ofertaTrabajo.fechaFinPublicacionTrabajo,
-
+            areaTrabajo: oferta.areaTrabajo,
+            tipoDePuestoTrabajo: oferta.tipoDePuestoTrabajo,
+            facultadTrabajo: oferta.facultadTrabajo,
+            remuneracion: oferta.remuneracion,
+            direccionTrabajo: oferta.direccionTrabajo,
+            descripcionTrabajo: oferta.descripcionTrabajo,
+            fechaInicioPublicacionTrabajo: oferta.fechaInicioPublicacionTrabajo,
+            fechaFinPublicacionTrabajo: oferta.fechaFinPublicacionTrabajo,
         }).$promise.then(
             function success(respuesta) {
                 console.log("oferta actualizado", respuesta);
                 $scope.ofertaTrabajo = respuesta;
-                oferta.mostrar = !oferta.mostrar
             },
             function error(error) {
                 console.log(error);
             });
     }
-
-
-    $scope.botonCrearDeshabilitado = false;
 
 }]);

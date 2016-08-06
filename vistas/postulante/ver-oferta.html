@@ -1,3 +1,6 @@
+<body>
+
+
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -31,22 +34,22 @@
                 </p>
             </div>
             <div class="col-sm-8 text-left">
-                <table class="table table-striped" ALIGN=center>
-                    <div ALIGN=center>
-                        <p>
-                            {{oferta.areaTrabajo}}
-                        </p>
-                        <p>
-                            {{oferta.remuneracion}}
-                        </p>
-                        <p>
-                            {{oferta.tipoDePuestoTrabajo}}
-                        </p>
+
+                <div class="panel panel-default" ALIGN=center>
+                    <div class="panel-heading">Oferta de Trabajo</div>
+                    <div class="panel-body">
+                        <div><b>Área:</b> {{oferta.areaTrabajo}}</div>
+                        <div><b>Tipo de Puesto:</b> {{oferta.tipoDePuestoTrabajo}}</div>
+                        <div><b>Facultad:</b> {{oferta.facultadTrabajo}}</div>
+                        <div><b>Remuneración:</b> {{oferta.remuneracion}}</div>
+                        <div><b>Dirección:</b> {{oferta.direccionTrabajo}}</div>
+                        <div><b>Descripción:</b> {{oferta.descripcionTrabajo}}</div>
+                        <div><b>Fecha de Publicación:</b> {{oferta.fechaInicioPublicacionTrabajo | date:'medium'}}</div>
+                        <div><b>Fecha Fin de Publicación: </b>{{oferta.fechaFinPublicacionTrabajo | date:'medium'}}</div>
                     </div>
-                    <div ALIGN=center>
-                        <button type="button" name="button" ng-click="postular()">Postular</button>
-                    </div>
-                </table>
+                    <button type="button" class="btn btn-primary" ALIGN=center name="button" ng-click="postular()">Postular</button>
+                </div>
+
             </div>
             <div class="col-sm-2 sidenav">
                 <div class="well">
@@ -68,3 +71,4 @@
         </div>
     </div>
 </div>
+</body>

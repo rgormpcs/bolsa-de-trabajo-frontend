@@ -27,53 +27,71 @@
     </div>
 </nav>
 <!-- TODO: cambiar for, id, etc ... -->
-<form class="form-horizontal">
-    <fieldset>
-        <legend id="titulo">Ingreso</legend>
-        <div class="form-group">
-            <label for="inputEmail" class="col-lg-2 control-label">Correo electrónico</label>
-            <div class="col-lg-10">
-                <input type="email" class="form-control" id="inputEmail" placeholder="Correo electrónico" ng-model="usuarioLogin.correo">
+<div class="box">
+    <div class="col-sm-5 sidenav">
+        <div>
+            <h1>Tipo de Ingreso</h1>
+            <h3>Bolsa de Trabajo EPN es un sistema dedicado a la publicación de oportunidades
+      laborales para estudiantes de la Escuela Politécnica Nacional </h3>
+
+        </div>
+    </div>
+    <div class="col-sm-5 sidenav">
+        <form class="form-horizontal">
+            <fieldset>
+                <legend id="titulo">Ingreso</legend>
+                <div class="form-group">
+                    <label for="inputEmail" class="col-lg-2 control-label">Correo electrónico</label>
+                    <div class="col-lg-10">
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Correo electrónico" ng-model="usuarioLogin.correo">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword" class="col-lg-2 control-label">Contraseña</label>
+                    <div class="col-lg-10">
+                        <input type="password" class="form-control" id="inputEmail" placeholder="Contraseña" ng-model="usuarioLogin.contrasenia">
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+
+        <form name="fcontacto">
+            <div>
+                <br>
+                <input type="radio" name="Conocido" value="Postulante" id="Conocido_0" onclick="mostrarReferenciaPostulante();" /> Postulante
+                <input type="radio" name="Conocido" value="Empleador" id="Conocido_1" onclick="mostrarReferenciaEmpleador();" /> Empleador
+                <br>
+                <br>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="inputPassword" class="col-lg-2 control-label">Contraseña</label>
-            <div class="col-lg-10">
-                <input type="password" class="form-control" id="inputEmail" placeholder="Contraseña" ng-model="usuarioLogin.contrasenia">
+            <div float="left">
+                <div  id="postulante" style="display:none;">
+                    <button type="reset" class="btn btn-default">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" ng-click="loginPostulante()">Ingresar</button>
+                </div>
+                <div  id="empleador" style="display:none;">
+                    <button type="reset" class="btn btn-default">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" ng-click="login()">Ingresar</button>
+                </div>
             </div>
+        </form>
+
+    </div>
+    <div class="col-sm-2 sidenav">
+        <div class="well">
+            <p>Cambio tipo de Letra</p>
+            <input type="button" value="Si" onClick="dis()" />
+            <input type="button" value="No" onClick="san()" />
         </div>
-        <!--Radio button-->
-        <!--    <div class="container">
-          <form role="form">
-            <label class="radio-inline">
-              <input type="radio" name="optradio">Empleador
-            </label>
-            <label class="radio-inline">
-              <input type="radio" name="optradio">Postulante
-            </label>
-          </form>
-        </div>-->
-        <!--Botones de ingreso
-        <div class="form-group">
-            <div class="col-lg-10 col-lg-offset-2">
-                <button type="reset" class="btn btn-default">Cancelar</button>
-                <button type="submit" class="btn btn-primary" ng-click="login()">Ingresar</button>
-            </div>
-        </div>-->
-    </fieldset>
-    </form>
-    
-    <form name="fcontacto">
-          <p>
-            <br />
-            <input type="radio" name="Conocido" value="Postulante" id="Conocido_0" onclick="mostrarReferenciaPostulante();" /> Postulante
-            <input type="radio" name="Conocido" value="Empleador" id="Conocido_1" onclick="mostrarReferenciaEmpleador();" /> Empleador
-        </p>
-        <div class="col-lg-10 col-lg-offset-2" id="postulante" style="display:none;">
-            <button type="reset" class="btn btn-default">Cancelar</button>
-            <button type="submit" class="btn btn-primary" ng-click="loginPostulante()">Ingresar Po</button>
+        <div class="well">
+            <p>Justificar</p>
+            <input type="button" value="Si" onClick="justificar()" />
+            <input type="button" value="No" onClick="noJustificar()" />
         </div>
-        <div class="col-lg-10 col-lg-offset-2" id="empleador" style="display:none;">
-            <button type="reset" class="btn btn-default">Cancelar</button>
-            <button type="submit" class="btn btn-primary" ng-click="login()">Ingresar Em</button>
+        <div class="well">
+            <p>Tamaño Letra</p>
+            <input type="button" value="-" onClick="zoomOut()" />
+            <input type="button" value="+" onClick="zoomIn()" />
         </div>
+    </div>
+</div>

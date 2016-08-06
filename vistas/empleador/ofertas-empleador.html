@@ -36,9 +36,16 @@
                 <div class="col-sm-8 text-left">
                     <table class="table table-striped">
                         <tbody ng-repeat="oferta in ofertas">
-                            <tr>
-                                <td><a href="#/ver-postulantes-de-oferta/{{oferta.id}}">{{oferta.areaTrabajo}}</a></td>
-                            </tr>
+                          <tr>
+                              <th>Área</th>
+                              <th>Tipo de Puesto de Trabajo</th>
+                              <th>Fecha de Publicación</th>
+                          </tr>
+                          <tr>
+                              <td><a href="#/ver-postulantes-de-oferta/{{oferta.id}}">{{oferta.areaTrabajo}}</a></td>
+                              <td><a href="#/ver-postulantes-de-oferta/{{oferta.id}}">{{oferta.tipoDePuestoTrabajo}}</a></td>
+                              <td><a href="#/ver-postulantes-de-oferta/{{oferta.id}}">{{oferta.fechaInicioPublicacionTrabajo}}</a></td>
+                          </tr>
                         </tbody>
                     </table>
                 </div>

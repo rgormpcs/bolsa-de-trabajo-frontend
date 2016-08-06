@@ -114,6 +114,9 @@ html, body {
   position:absolute;
   left: 5%;
   right: 5%;
-  top: 25%;
+  top: 15%;
+
   background-image: url(/img/inicio.png);
 }
+
+/*login*/

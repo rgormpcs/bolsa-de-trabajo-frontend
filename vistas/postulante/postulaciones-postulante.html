@@ -37,21 +37,28 @@
                     <table class="table table-striped">
                         <tbody ng-repeat="oferta in ofertas">
                             <tr>
+                                <th>Área</th>
+                                <th>Tipo de Puesto de Trabajo</th>
+                                <th>Fecha de Publicación</th>
+                            </tr>
+                            <tr>
                                 <td><a href="#/ver-oferta/{{oferta.id}}">{{oferta.areaTrabajo}}</a></td>
+                                <td><a href="#/ver-oferta/{{oferta.id}}">{{oferta.tipoDePuestoTrabajo}}</a></td>
+                                <td><a href="#/ver-oferta/{{oferta.id}}">{{oferta.fechaInicioPublicacionTrabajo}}</a></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="col-sm-2 sidenav">
                     <div class="well">
-                      <p>Cambio tipo de Letra</p>
-                         <input type="button" value="Si" onClick="dis()" />
-                         <input type="button" value="No" onClick="san()" />
+                        <p>Cambio tipo de Letra</p>
+                        <input type="button" value="Si" onClick="dis()" />
+                        <input type="button" value="No" onClick="san()" />
                     </div>
                     <div class="well">
-                      <p>Justificar</p>
-                      <input type="button" value="Si" onClick="justificar()" />
-                      <input type="button" value="No" onClick="noJustificar()" />
+                        <p>Justificar</p>
+                        <input type="button" value="Si" onClick="justificar()" />
+                        <input type="button" value="No" onClick="noJustificar()" />
                     </div>
                     <div class="well">
                         <p>Tamaño Letra</p>

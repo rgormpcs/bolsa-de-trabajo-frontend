@@ -27,7 +27,7 @@
     </div>
 </nav>
 <!-- TODO: cambiar for, id, etc ... -->
-<form class="form-horizontal"  align="center">
+<form class="form-horizontal">
     <fieldset>
         <legend id="titulo">Ingreso</legend>
         <div class="form-group">
@@ -61,19 +61,19 @@
             </div>
         </div>-->
     </fieldset>
-</form>
-
-<form name="fcontacto">
-      <p>
-        <br />
-        <input type="radio" name="Conocido" value="Postulante" id="Conocido_0" onclick="mostrarReferenciaPostulante();" /> Postulante
-        <input type="radio" name="Conocido" value="Empleador" id="Conocido_1" onclick="mostrarReferenciaEmpleador();" /> Empleador
-    </p>
-    <div class="col-lg-10 col-lg-offset-2" id="postulante" style="display:none;">
-        <button type="reset" class="btn btn-default">Cancelar</button>
-        <button type="submit" class="btn btn-primary" ng-click="loginPostulante()">Ingresar Po</button>
-    </div>
-    <div class="col-lg-10 col-lg-offset-2" id="empleador" style="display:none;">
-        <button type="reset" class="btn btn-default">Cancelar</button>
-        <button type="submit" class="btn btn-primary" ng-click="login()">Ingresar Em</button>
-    </div>
+    </form>
+    
+    <form name="fcontacto">
+          <p>
+            <br />
+            <input type="radio" name="Conocido" value="Postulante" id="Conocido_0" onclick="mostrarReferenciaPostulante();" /> Postulante
+            <input type="radio" name="Conocido" value="Empleador" id="Conocido_1" onclick="mostrarReferenciaEmpleador();" /> Empleador
+        </p>
+        <div class="col-lg-10 col-lg-offset-2" id="postulante" style="display:none;">
+            <button type="reset" class="btn btn-default">Cancelar</button>
+            <button type="submit" class="btn btn-primary" ng-click="loginPostulante()">Ingresar Po</button>
+        </div>
+        <div class="col-lg-10 col-lg-offset-2" id="empleador" style="display:none;">
+            <button type="reset" class="btn btn-default">Cancelar</button>
+            <button type="submit" class="btn btn-primary" ng-click="login()">Ingresar Em</button>
+        </div>

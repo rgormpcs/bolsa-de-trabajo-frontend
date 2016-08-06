@@ -1,5 +1,5 @@
 app.controller('OfertasEmpleadorCtrl', ['$scope', '$state', '$cookies', 'OfertaTrabajoFactory', function($scope, $state, $cookies, OfertaTrabajoFactory) {
-    $scope.facultades = [{
+  /*  $scope.facultades = [{
         clave: 'ciencias',
         nombre: 'Facultad de Ciencias'
     }, {
@@ -29,7 +29,7 @@ app.controller('OfertasEmpleadorCtrl', ['$scope', '$state', '$cookies', 'OfertaT
     }, {
         clave: 'prepo',
         nombre: 'Formación Básica'
-    }];
+    }];*/
 
     // $scope.ofertas = [];
 

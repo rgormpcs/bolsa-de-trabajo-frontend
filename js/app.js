@@ -107,7 +107,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             }
         });
 
-    $urlRouterProvider.otherwise("/home");
+    $urlRouterProvider.otherwise("/");
 });
 
 //permite verificar si la pagina a la que se quiere acceder

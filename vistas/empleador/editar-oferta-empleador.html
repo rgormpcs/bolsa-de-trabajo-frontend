@@ -65,7 +65,9 @@
                 <div class="form-group">
                     <label for="inputFacultad" class="col-lg-2 control-label">Facultad</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" id="inputFacultad" placeholder="Facultad" ng-model="ofertaTrabajo.facultadTrabajo">
+                        <select class="form-control" ng-model="ofertaTrabajo.facultadTrabajo" required>
+                            <option value="{{facultad.nombre}}" ng-repeat="facultad in facultades">{{facultad.nombre}}</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group">

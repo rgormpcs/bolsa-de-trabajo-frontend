@@ -1,4 +1,4 @@
-app.controller('PostulacionesRealizadasCtrl', ['$scope', 'PostulanteFactory', '$cookies', 'OfertaTrabajoFactory',
+app.controller('PostulacionesRealizadasCtrl', ['$scope', 'OfertaTrabajoFactory', 'PostulanteFactory', '$cookies',
     function($scope, PostulanteFactory, $cookies, OfertaTrabajoFactory) {
         console.log('en PostulacionesRealizadasCtrl');
         $scope.ofertas = [];

@@ -107,7 +107,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             }
         });
 
-    $urlRouterProvider.otherwise("/registro-de-empleador");
+    $urlRouterProvider.otherwise("/home");
 });
 
 //permite verificar si la pagina a la que se quiere acceder

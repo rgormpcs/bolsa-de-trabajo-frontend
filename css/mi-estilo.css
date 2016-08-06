@@ -108,3 +108,12 @@ html, body {
  font-family: eulexia;
  src: url('http://dyslexicfonts.com/fonts/eulexia.ttf');
 }
+
+/*inicio*/
+.box{
+  position:absolute;
+  left: 5%;
+  right: 5%;
+  top: 25%;
+  background-image: url(/img/inicio.png);
+}

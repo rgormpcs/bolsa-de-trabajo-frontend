@@ -38,107 +38,147 @@
     <div class="col-sm-1"></div>
     <div class="col-sm-9">
         <h2><center>Registro de Postulante</center></h2>
-        <form class="form-horizontal">
+        <form class="form-horizontal" name="validacion">
             <fieldset>
                 <div class="form-group">
                     <label for="inputCedula" class="col-lg-2 control-label">Cédula de Identidad</label>
                     <div class="col-lg-10">
-                        <input type="text" maxlength="10" onKeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;" class="form-control" id="inputCedula" placeholder="Cédula de Identidad" ng-model="postulante.cedulaPostulante" required>
+                        <input type="text" name="cedula" maxlength="10" onKeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;" class="form-control" id="inputCedula" placeholder="Cédula de Identidad" ng-model="postulante.cedulaPostulante" required>
+                        <span class="messages" ng-show="validacion.$submitted || validacion.cedula.$touched">
+                        <span ng-show="validacion.cedula.$error.required">El campo es Requerido y no puede exceder 10 digitos.</span>
+                        </span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputNombre" class="col-lg-2 control-label">Nombre </label>
                     <div class="col-lg-10">
-                        <input type="text" maxlength="20" onKeypress="if (event.keyCode > 47 && event.keyCode < 58) event.returnValue = false;" class="form-control" id="inputNombre" placeholder="Nombre" ng-model="postulante.nombrePostulante" required>
+                        <input type="text" name="nombre" maxlength="20" onKeypress="if (event.keyCode > 47 && event.keyCode < 58) event.returnValue = false;" class="form-control" id="inputNombre" placeholder="Nombre" ng-model="postulante.nombrePostulante" required>
+                        <span class="messages" ng-show="validacion.$submitted || validacion.nombre.$touched">
+                        <span ng-show="validacion.nombre.$error.required">El campo es Requerido y no puede ingresar números.</span>
+                        </span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputApellido" class="col-lg-2 control-label">Apellído </label>
                     <div class="col-lg-10">
-                        <input type="text" maxlength="30" onKeypress="if (event.keyCode > 47 && event.keyCode < 58) event.returnValue = false;" class="form-control" id="inputApellido" placeholder="Apellido de Postulante" ng-model="postulante.apellidoPostulante" required>
+                        <input type="text" name="apellido" maxlength="30" onKeypress="if (event.keyCode > 47 && event.keyCode < 58) event.returnValue = false;" class="form-control" id="inputApellido" placeholder="Apellido de Postulante" ng-model="postulante.apellidoPostulante"
+                            required>
+                        <span class="messages" ng-show="validacion.$submitted || validacion.apellido.$touched">
+                        <span ng-show="validacion.apellido.$error.required">El campo es Requerido y no puede ingresar números.</span>
+                        </span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputTelefono" class="col-lg-2 control-label">Teléfono </label>
                     <div class="col-lg-10">
-                        <input type="number" maxlength="15" onKeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;" class="form-control" id="inputTelefono" placeholder="Telefono de Postulante" ng-model="postulante.telefonoPostulante" required>
+                        <input type="number" name="telefono" maxlength="15" onKeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;" class="form-control" id="inputTelefono" placeholder="Telefono de Postulante" ng-model="postulante.telefonoPostulante"
+                            required>
+                        <span class="messages" ng-show="validacion.$submitted || validacion.telefono.$touched">
+                        <span ng-show="validacion.telefono.$error.required">El campo es Requerido y no puede ingresar letras.</span>
+                        </span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputCelular" class="col-lg-2 control-label">Celular</label>
                     <div class="col-lg-10">
-                        <input type="number" maxlength="12" onKeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;" class="form-control" id="inputCelular" placeholder="Cédula de Identidad" ng-model="postulante.celularPostulante" required>
+                        <input type="number" name="celular" maxlength="12" onKeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;" class="form-control" id="inputCelular" placeholder="Celular de Postulante" ng-model="postulante.celularPostulante" required>
+                        <span class="messages" ng-show="validacion.$submitted || validacion.celular.$touched">
+                        <span ng-show="validacion.celular.$error.required">El campo es Requerido y no puede ingresar letras.</span>
+                        </span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputEmail" class="col-lg-2 control-label">Correo Electrónico</label>
                     <div class="col-lg-10">
-                        <input type="email" maxlength="20" class="form-control" id="inputEmail" placeholder="Correo Electrónico" ng-model="postulante.emailPostulante" required>
+                        <input type="email" name="email" maxlength="20" class="form-control" id="inputEmail" placeholder="Correo Electrónico" ng-model="postulante.emailPostulante" required>
+                        <span class="messages" ng-show="validacion.$submitted || validacion.email.$touched">
+                        <span ng-show="validacion.email.$error.required">El campo es Requerido.</span>
+                        <span ng-show="validacion.email.$error.email">Formato de correo Incorrecto.</span>
+                        </span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputNacionalidad" class="col-lg-2 control-label">Nacionalidad</label>
                     <div class="col-lg-10">
                         <!--<input type="text" class="form-control" id="inputNacionalidad" placeholder="Nacionalidad" ng-model="postulante.nacionalidadPostulante" required>-->
-                        <select class="form-control" id="inputNacionalidad" placeholder="Nacionalidad" ng-model="postulante.nacionalidadPostulante" required>
+                        <select class="form-control" name="nacionalidad" id="inputNacionalidad" placeholder="Nacionalidad" ng-model="postulante.nacionalidadPostulante" required>
                             <option value="Soltero">Ecuatoriana</option>
                             <option value="Casado">Extranjera</option>
                         </select>
+                        <span class="messages" ng-show="validacion.$submitted || validacion.nacionalidad.$touched">
+                        <span ng-show="validacion.nacionalidad.$error.required">Seleccione una Nacionalidad.</span>
+                        </span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputEstadoCivil" class="col-lg-2 control-label">Estado Civil</label>
                     <div class="col-lg-10">
                         <!-- <input type="text" class="form-control" id="inputEstadoCivil" placeholder="Estado Civil" ng-model="postulante.estadoCivilPostulante"> -->
-                        <select class="form-control" id="inputEstadoCivil" placeholder="Estado Civil" ng-model="postulante.estadoCivilPostulante" required>
+                        <select class="form-control" name="estadoCivil" id="inputEstadoCivil" placeholder="Estado Civil" ng-model="postulante.estadoCivilPostulante" required>
                             <option value="Soltero">Soltero/a</option>
                             <option value="Casado">Viudo/a</option>
                             <option value="Casado">Casado/a</option>
                             <option value="Casado">Divorciado/a</option>
                             <option value="Casado">Unión Libre</option>
                         </select>
+                        <span class="messages" ng-show="validacion.$submitted || validacion.estadoCivil.$touched">
+                        <span ng-show="validacion.estadoCivil.$error.required">Seleccione un Estado Civil.</span>
+                        </span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputGenero" class="col-lg-2 control-label">Género</label>
                     <div class="col-lg-10">
                         <!-- <input type="text" class="form-control" id="inputGenero" placeholder="Género" ng-model="postulante.generoPostulante"> -->
-                        <select class="form-control" id="inputGenero" placeholder="Género" ng-model="postulante.genroPostulante" required>
+                        <select class="form-control" name="genero" id="inputGenero" placeholder="Género" ng-model="postulante.genroPostulante" required>
                             <option value="Masculino">Masculino</option>
                             <option value="Femenino">Femenino</option>
                         </select>
+                        <span class="messages" ng-show="validacion.$submitted || validacion.genero.$touched">
+                        <span ng-show="validacion.genero.$error.required">Seleccione un Género.</span>
+                        </span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputFechaNacimiento" class="col-lg-2 control-label">Fecha de Nacimiento</label>
                     <div class="col-lg-10">
-                        <input type="date" class="form-control" id="inputFechaNacimiento" placeholder="Fecha de Nacimiento" ng-model="postulante.fechaNacimientoPostulante" required>
+                        <input type="date" name="fechaN" class="form-control" id="inputFechaNacimiento" placeholder="Fecha de Nacimiento" ng-model="postulante.fechaNacimientoPostulante" required>
+                        <span class="messages" ng-show="validacion.$submitted || validacion.fechaN.$touched">
+                        <span ng-show="validacion.fechaN.$error.required">Seleccione Fecha de Nacimiento.</span>
+                        </span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputDescripcion" class="col-lg-2 control-label">Descripción </label>
                     <div class="col-lg-10">
-                        <input type="text" maxlength="50" class="form-control" id="inputDescripcion " placeholder="Descripción " ng-model="postulante.descripcionPerfilPostulante" required>
+                        <input type="text" name="descripcion" maxlength="50" class="form-control" id="inputDescripcion " placeholder="Descripción " ng-model="postulante.descripcionPerfilPostulante" required>
+                        <span class="messages" ng-show="validacion.$submitted || validacion.descripcion.$touched">
+                        <span ng-show="validacion.descripcion.$error.required">El campo es Requerido.</span>
+                        </span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputCv" class="col-lg-2 control-label">Curriculum</label>
                     <div class="col-lg-10">
                         <input type="password" class="form-control" id="inputCv" placeholder="Curriculum" ng-model="postulante.cvPostulante" required>
+
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="inputPassword" class="col-lg-2 control-label">Contraseña</label>
                     <div class="col-lg-10">
-                        <input type="password" maxlength="15" class="form-control" id="inputEmail" placeholder="Contraseña" ng-model="postulante.contraseniaPostulante" required>
+                        <input type="password" name="contraseniaP" maxlength="15" class="form-control" id="inputEmail" placeholder="Contraseña" ng-model="postulante.contraseniaPostulante" required>
+                        <span class="messages" ng-show="validacion.$submitted || validacion.contraseniaP.$touched">
+                        <span ng-show="validacion.contraseniaP.$error.required">El campo es Requerido.</span>
+                        </span>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-lg-10 col-lg-offset-2">
                         <button type="reset" class="btn btn-default">Cancelar</button>
-                        <button type="submit" class="btn btn-primary" ng-click="registrarPostulante()">Registrar</button>
+                        <button type="submit" class="btn btn-primary" ng-click="registrarPostulante()" ng-disabled="validacion.$invalid">Registrar</button>
                     </div>
                 </div>
 

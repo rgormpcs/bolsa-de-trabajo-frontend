@@ -55,7 +55,7 @@
                 <div class="form-group">
                     <label for="inputApellido" class="col-lg-2 control-label">Apellído </label>
                     <div class="col-lg-10">
-                        <input type="text"  maxlength="30" onKeypress="if (event.keyCode > 47 && event.keyCode < 58) event.returnValue = false;" class="form-control" id="inputApellido" placeholder="Apellido de Postulante" ng-model="postulante.apellidoPostulante" required>
+                        <input type="text" maxlength="30" onKeypress="if (event.keyCode > 47 && event.keyCode < 58) event.returnValue = false;" class="form-control" id="inputApellido" placeholder="Apellido de Postulante" ng-model="postulante.apellidoPostulante" required>
                     </div>
                 </div>
                 <div class="form-group">
@@ -81,18 +81,21 @@
                     <div class="col-lg-10">
                         <!--<input type="text" class="form-control" id="inputNacionalidad" placeholder="Nacionalidad" ng-model="postulante.nacionalidadPostulante" required>-->
                         <select class="form-control" id="inputNacionalidad" placeholder="Nacionalidad" ng-model="postulante.nacionalidadPostulante" required>
-                              <option value="Soltero">Ecuatoriana</option>
-                              <option value="Casado">Otros</option>
-                          </select>
+                            <option value="Soltero">Ecuatoriana</option>
+                            <option value="Casado">Extranjera</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputEstadoCivil" class="col-lg-2 control-label">Estado Civil</label>
                     <div class="col-lg-10">
                         <!-- <input type="text" class="form-control" id="inputEstadoCivil" placeholder="Estado Civil" ng-model="postulante.estadoCivilPostulante"> -->
-                      <select class="form-control" id="inputEstadoCivil" placeholder="Estado Civil" ng-model="postulante.estadoCivilPostulante" required>
-                            <option value="Soltero">Soltero</option>
-                            <option value="Casado">Casado</option>
+                        <select class="form-control" id="inputEstadoCivil" placeholder="Estado Civil" ng-model="postulante.estadoCivilPostulante" required>
+                            <option value="Soltero">Soltero/a</option>
+                            <option value="Casado">Viudo/a</option>
+                            <option value="Casado">Casado/a</option>
+                            <option value="Casado">Divorciado/a</option>
+                            <option value="Casado">Unión Libre</option>
                         </select>
                     </div>
                 </div>
@@ -115,7 +118,7 @@
                 <div class="form-group">
                     <label for="inputDescripcion" class="col-lg-2 control-label">Descripción </label>
                     <div class="col-lg-10">
-                        <input type="text" maxlength="50"  class="form-control" id="inputDescripcion " placeholder="Descripción " ng-model="postulante.descripcionPerfilPostulante" required>
+                        <input type="text" maxlength="50" class="form-control" id="inputDescripcion " placeholder="Descripción " ng-model="postulante.descripcionPerfilPostulante" required>
                     </div>
                 </div>
                 <div class="form-group">
@@ -132,12 +135,12 @@
                     </div>
                 </div>
 
-                    <div class="form-group">
-                        <div class="col-lg-10 col-lg-offset-2">
-                            <button type="reset" class="btn btn-default">Cancelar</button>
-                            <button type="submit" class="btn btn-primary" ng-click="registrarPostulante()">Registrar</button>
-                        </div>
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button type="reset" class="btn btn-default">Cancelar</button>
+                        <button type="submit" class="btn btn-primary" ng-click="registrarPostulante()">Registrar</button>
                     </div>
+                </div>
 
             </fieldset>
         </form>

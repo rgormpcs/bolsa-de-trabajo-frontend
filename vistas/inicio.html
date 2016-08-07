@@ -1,68 +1,71 @@
 <div id="wrapper">
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#/"><img src="img/work.png" alt="" /></a>
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#/"><img src="img/work.png" alt="" /></a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#/">Inicio <span class="sr-only">(current)</span></a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Registro <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#/registro-de-postulante">Postulante</a></li>
+                            <li><a href="#/registro-de-empleador">Empleador</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#/login">Ingreso</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#/">Inicio <span class="sr-only">(current)</span></a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Registro <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#/registro-de-postulante">Postulante</a></li>
-                        <li><a href="#/registro-de-empleador">Empleador</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#/login">Ingreso</a></li>
-            </ul>
+    </nav>
+
+    <div class="box1">
+        <div class="col-sm-10 ">
+            <legend id="titulo">Bolsa de Trabajo EPN</legend>
+
+            <img class="logo" src="img/logo.png">
+            <div class="parrafo">
+                <p> Bolsa de Trabajo EPN, le permite registrarse como empleador o postulante. </p>
+                <p>Un empleador podrá publicar anuncios laborales dirigidos a la comunidad politécnica con un periodo de vigencia. Un postulante podrá elegir entre los anuncios laborales vigentes para los que se considere capacitados.</p>
+            </div>
+            <div>
+                <br>
+                <br>
+                <a href="https://www.facebook.com/EPNQuito" target="_blank"><img alt="siguenos en facebook" height="48" src="http://2.bp.blogspot.com/-GlLV_MydcBk/UiX09MYOSfI/AAAAAAAAB18/5vkDADo6qEw/s1600/Facebook+alt+1.png" title="siguenos en facebook" width="48" /></a>
+                <a href="https://twitter.com/EPNEcuador" target="_blank"><img alt="siguenos en Twitter" height="48" src="http://2.bp.blogspot.com/-CaF1EOBAWj4/UiX1AxmkZuI/AAAAAAAAB2Y/IioIplosXNo/s1600/Twitter+NEW.png" title="siguenos en Twitter" width="48" /></a>
+                <a href="http://www.epn.edu.ec/graduados/oferta-laboral-2/" target="_blank"><img alt="sígueme en EPN" height="48" src="https://bvirtual.epn.edu.ec/SGUB/vauth/img/logo.png" title="sígueme en Myspace" width="48" /></a>
+
+            </div>
+
         </div>
+        <div class="col-sm-2 sidenav">
+            <div class="well">
+                <p>Cambio tipo de Letra</p>
+                <input type="button" value="Si" onClick="dis()" />
+                <input type="button" value="No" onClick="san()" />
+            </div>
+            <div class="well">
+                <p>Justificar</p>
+                <input type="button" value="Si" onClick="justificar()" />
+                <input type="button" value="No" onClick="noJustificar()" />
+            </div>
+            <div class="well">
+                <p>Tamaño Letra</p>
+                <input type="button" value="-" onClick="zoomOut()" />
+                <input type="button" value="+" onClick="zoomIn()" />
+            </div>
+        </div>
+
     </div>
-</nav>
 
-<div class="box">
-    <div class="col-sm-10 sidenav">
-        <h1>Bolsa de Trabajo EPN</h1>
-        <img class="logo" src="img/logo.png">
-          <h3>  Bolsa de Trabajo EPN, le permite registrarse como empleador o postulante.  </h3>
-          <h3>Un empleador podrá publicar anuncios laborales dirigidos a la comunidad politécnica con un periodo de vigencia.
-          <h3>Un postulante podrá elegir entre los anuncios laborales vigentes
-          para los que se considere capacitados.</h3>
-        <div>
-            <br>
-            <br>
-            <a href="https://www.facebook.com/EPNQuito" target="_blank"><img alt="siguenos en facebook" height="48" src="http://2.bp.blogspot.com/-GlLV_MydcBk/UiX09MYOSfI/AAAAAAAAB18/5vkDADo6qEw/s1600/Facebook+alt+1.png" title="siguenos en facebook" width="48" /></a>
-            <a href="https://twitter.com/EPNEcuador" target="_blank"><img alt="siguenos en Twitter" height="48" src="http://2.bp.blogspot.com/-CaF1EOBAWj4/UiX1AxmkZuI/AAAAAAAAB2Y/IioIplosXNo/s1600/Twitter+NEW.png" title="siguenos en Twitter" width="48" /></a>
-            <a href="http://www.epn.edu.ec/graduados/oferta-laboral-2/" target="_blank"><img alt="sígueme en EPN" height="48" src="https://bvirtual.epn.edu.ec/SGUB/vauth/img/logo.png" title="sígueme en Myspace" width="48" /></a>
-
-        </div>
-
-    </div>
-    <div class="col-sm-2 sidenav">
-        <div class="well">
-            <p>Cambio tipo de Letra</p>
-            <input type="button" value="Si" onClick="dis()" />
-            <input type="button" value="No" onClick="san()" />
-        </div>
-        <div class="well">
-            <p>Justificar</p>
-            <input type="button" value="Si" onClick="justificar()" />
-            <input type="button" value="No" onClick="noJustificar()" />
-        </div>
-        <div class="well">
-            <p>Tamaño Letra</p>
-            <input type="button" value="-" onClick="zoomOut()" />
-            <input type="button" value="+" onClick="zoomIn()" />
-        </div>
-    </div>
-
-</div>
 </div>

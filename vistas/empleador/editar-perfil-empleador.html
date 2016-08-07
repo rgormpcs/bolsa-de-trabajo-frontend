@@ -33,48 +33,76 @@
 <div class="col-sm-1"></div>
 <div class="col-sm-9">
     <h2><center>Editar Empleador</center></h2>
-    <form class="form-horizontal">
+    <form class="form-horizontal" name="validacion">
         <fieldset>
             <div class="form-group">
                 <label for="inputCedula" class="col-lg-2 control-label">Cédula de Identidad</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" id="inputCedula" placeholder="Cédula de Identidad" ng-model="empleador.cedulaEmpleador">
+                    <input type="text" name="cedula" maxlength="10" onKeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;" class="form-control" id="inputCedula" placeholder="Cédula de Identidad" ng-model="empleador.cedulaEmpleador" required>
+                    <span class="messages" ng-show="validacion.$submitted || validacion.cedula.$touched">
+                <span ng-show="validacion.cedula.$error.required">El campo es Requerido y no puede exceder 10 digitos.</span>
+                    </span>
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputNombre" class="col-lg-2 control-label">Nombre</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" id="inputNombre" placeholder="Nombre" ng-model="empleador.nombreEmpleador">
+                    <input type="text" name="nombre" maxlength="20" onKeypress="if (event.keyCode > 47 && event.keyCode < 58) event.returnValue = false;" class="form-control" id="inputNombre" placeholder="Nombre" ng-model="empleador.nombreEmpleador" required>
+                    <span class="messages" ng-show="validacion.$submitted || validacion.nombre.$touched">
+                <span ng-show="validacion.nombre.$error.required">El campo es Requerido y no puede ingresar números.</span>
+                    </span>
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputApellido" class="col-lg-2 control-label">Apellido</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" id="inputApellido" placeholder="Apellido" ng-model="empleador.apellidoEmpleador">
+                    <input type="text" name="apellido" maxlength="30" onKeypress="if (event.keyCode > 47 && event.keyCode < 58) event.returnValue = false;" class="form-control" id="inputApellido" placeholder="Apellido" ng-model="empleador.apellidoEmpleador" required>
+                    <span class="messages" ng-show="validacion.$submitted || validacion.apellido.$touched">
+                <span ng-show="validacion.apellido.$error.required">El campo es Requerido y no puede ingresar números.</span>
+                    </span>
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputTelefono" class="col-lg-2 control-label">Teléfono</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" id="inputTelefono" placeholder="Teléfono" ng-model="empleador.telefonoEmpleador">
+                    <input type="text" name="telefono" maxlength="15" onKeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;" class="form-control" id="inputTelefono" placeholder="Teléfono" ng-model="empleador.telefonoEmpleador" required>
+                    <span class="messages" ng-show="validacion.$submitted || validacion.telefono.$touched">
+                <span ng-show="validacion.telefono.$error.required">El campo es Requerido y no puede ingresar letras.</span>
+                    </span>
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputCorreoElectronico" class="col-lg-2 control-label">Correo electrónico</label>
                 <div class="col-lg-10">
-                    <input type="email" class="form-control" id="inputCorreoElectronico" placeholder="Correo electrónico" ng-model="empleador.correoEmpleador">
+                    <input type="email" name="email" maxlength="50" class="form-control" id="inputCorreoElectronico" placeholder="Correo electrónico" ng-model="empleador.correoEmpleador" required>
+                    <span class="messages" ng-show="validacion.$submitted || validacion.email.$touched">
+                    <span ng-show="validacion.email.$error.required">El campo es Requerido.</span>
+                    <span ng-show="validacion.email.$error.email">Formato de correo Incorrecto.</span>
+                    </span>
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputNombreEmpresa" class="col-lg-2 control-label">Nombre de la Empresa</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" id="inputNombreEmpresa" placeholder="Nombre de la Empresa" ng-model="empleador.nombreEmpresaEmpleador">
+                    <input type="text" name="nombreE" maxlength="50" class="form-control" id="inputNombreEmpresa" placeholder="Nombre de la Empresa" ng-model="empleador.nombreEmpresaEmpleador" required>
+                    <span class="messages" ng-show="validacion.$submitted || validacion.nombreE.$touched">
+                <span ng-show="validacion.nombreE.$error.required">El campo es Requerido.</span>
+                    </span>
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputPassword" class="col-lg-2 control-label">Contraseña</label>
                 <div class="col-lg-10">
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña" ng-model="empleador.contraseniaEmpleador">
+                    <input type="password" name="contraseniaE" maxlength="15" class="form-control" id="inputPassword" placeholder="Contraseña" ng-model="empleador.contraseniaEmpleador" required>
+                    <span class="messages" ng-show="validacion.$submitted || validacion.contraseniaE.$touched">
+                <span ng-show="validacion.contraseniaE.$error.required">El campo es Requerido.</span>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <button type="reset" class="btn btn-default">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" ng-click="editarEmpleador()" ng-disabled="validacion.$invalid">Actualizar</button>
                 </div>
             </div>
         </fieldset>
@@ -101,17 +129,4 @@
 
 <div class="col-sm-2"></div>
 
-
-<div class="row">
-    <div class="col-sm-4"></div>
-    <div class="col-sm-4">
-        <div class="form-group">
-            <div class="col-lg-10 col-lg-offset-2">
-                <button type="reset" class="btn btn-default">Cancelar</button>
-                <button type="submit" class="btn btn-primary" ng-click="editarEmpleador()">Actualizar</button>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-4"></div>
-</div>
 </div>

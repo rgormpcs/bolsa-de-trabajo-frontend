@@ -71,7 +71,7 @@
                 <div class="form-group">
                     <label for="inputTelefono" class="col-lg-2 control-label">Teléfono </label>
                     <div class="col-lg-10">
-                        <input type="number" name="telefono" maxlength="15" onKeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;" class="form-control" id="inputTelefono" placeholder="Telefono de Postulante" ng-model="postulante.telefonoPostulante"
+                        <input type="text" name="telefono" maxlength="15" onKeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;" class="form-control" id="inputTelefono" placeholder="Telefono de Postulante" ng-model="postulante.telefonoPostulante"
                             required>
                         <span class="messages" ng-show="validacion.$submitted || validacion.telefono.$touched">
                         <span ng-show="validacion.telefono.$error.required">El campo es Requerido y no puede ingresar letras.</span>
@@ -81,7 +81,7 @@
                 <div class="form-group">
                     <label for="inputCelular" class="col-lg-2 control-label">Celular</label>
                     <div class="col-lg-10">
-                        <input type="number" name="celular" maxlength="12" onKeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;" class="form-control" id="inputCelular" placeholder="Celular de Postulante" ng-model="postulante.celularPostulante" required>
+                        <input type="text" name="celular" maxlength="12" onKeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;" class="form-control" id="inputCelular" placeholder="Celular de Postulante" ng-model="postulante.celularPostulante" required>
                         <span class="messages" ng-show="validacion.$submitted || validacion.celular.$touched">
                         <span ng-show="validacion.celular.$error.required">El campo es Requerido y no puede ingresar letras.</span>
                         </span>
@@ -90,7 +90,7 @@
                 <div class="form-group">
                     <label for="inputEmail" class="col-lg-2 control-label">Correo Electrónico</label>
                     <div class="col-lg-10">
-                        <input type="email" name="email" maxlength="20" class="form-control" id="inputEmail" placeholder="Correo Electrónico" ng-model="postulante.emailPostulante" required>
+                        <input type="email" name="email" maxlength="50" class="form-control" id="inputEmail" placeholder="Correo Electrónico" ng-model="postulante.emailPostulante" required>
                         <span class="messages" ng-show="validacion.$submitted || validacion.email.$touched">
                         <span ng-show="validacion.email.$error.required">El campo es Requerido.</span>
                         <span ng-show="validacion.email.$error.email">Formato de correo Incorrecto.</span>
@@ -102,8 +102,8 @@
                     <div class="col-lg-10">
                         <!--<input type="text" class="form-control" id="inputNacionalidad" placeholder="Nacionalidad" ng-model="postulante.nacionalidadPostulante" required>-->
                         <select class="form-control" name="nacionalidad" id="inputNacionalidad" placeholder="Nacionalidad" ng-model="postulante.nacionalidadPostulante" required>
-                            <option value="Soltero">Ecuatoriana</option>
-                            <option value="Casado">Extranjera</option>
+                            <option value="Ecuatoriana">Ecuatoriana</option>
+                            <option value="Extranjera">Extranjera</option>
                         </select>
                         <span class="messages" ng-show="validacion.$submitted || validacion.nacionalidad.$touched">
                         <span ng-show="validacion.nacionalidad.$error.required">Seleccione una Nacionalidad.</span>
@@ -115,11 +115,11 @@
                     <div class="col-lg-10">
                         <!-- <input type="text" class="form-control" id="inputEstadoCivil" placeholder="Estado Civil" ng-model="postulante.estadoCivilPostulante"> -->
                         <select class="form-control" name="estadoCivil" id="inputEstadoCivil" placeholder="Estado Civil" ng-model="postulante.estadoCivilPostulante" required>
-                            <option value="Soltero">Soltero/a</option>
-                            <option value="Casado">Viudo/a</option>
-                            <option value="Casado">Casado/a</option>
-                            <option value="Casado">Divorciado/a</option>
-                            <option value="Casado">Unión Libre</option>
+                            <option value="Soltero/a">Soltero/a</option>
+                            <option value="Viudo/a">Viudo/a</option>
+                            <option value="Casado/a">Casado/a</option>
+                            <option value="Divorciado/a">Divorciado/a</option>
+                            <option value="Unión Libre">Unión Libre</option>
                         </select>
                         <span class="messages" ng-show="validacion.$submitted || validacion.estadoCivil.$touched">
                         <span ng-show="validacion.estadoCivil.$error.required">Seleccione un Estado Civil.</span>
@@ -151,7 +151,7 @@
                 <div class="form-group">
                     <label for="inputDescripcion" class="col-lg-2 control-label">Descripción </label>
                     <div class="col-lg-10">
-                        <input type="text" name="descripcion" maxlength="50" class="form-control" id="inputDescripcion " placeholder="Descripción " ng-model="postulante.descripcionPerfilPostulante" required>
+                        <input type="text" name="descripcion" maxlength="60" class="form-control" id="inputDescripcion " placeholder="Descripción " ng-model="postulante.descripcionPerfilPostulante" required>
                         <span class="messages" ng-show="validacion.$submitted || validacion.descripcion.$touched">
                         <span ng-show="validacion.descripcion.$error.required">El campo es Requerido.</span>
                         </span>

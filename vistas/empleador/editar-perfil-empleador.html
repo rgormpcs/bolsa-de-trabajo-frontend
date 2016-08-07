@@ -49,7 +49,7 @@
                 <div class="col-lg-10">
                     <input type="text" name="nombre" maxlength="20" onKeypress="if (event.keyCode > 47 && event.keyCode < 58) event.returnValue = false;" class="form-control" id="inputNombre" placeholder="Nombre" ng-model="empleador.nombreEmpleador" required>
                     <span class="messages" ng-show="validacion.$submitted || validacion.nombre.$touched">
-                <span ng-show="validacion.nombre.$error.required">El campo es Requerido y no puede ingresar números.</span>
+                    <span ng-show="validacion.nombre.$error.required">El campo es Requerido y no puede ingresar números.</span>
                     </span>
                 </div>
             </div>

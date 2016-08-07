@@ -31,6 +31,18 @@ app.controller('LoginCtrl', ['$scope', '$state', '$cookies', 'EmpleadorFactory',
 
 
 function mostrarReferenciaPostulante() {
+
+    if (document.fcontacto.email.value.length==0){
+      	alert("Tiene que escribir su Correo Electronico")
+      	document.fcontacto.email.focus()
+      	return 0;
+   	}
+
+    if (document.fcontacto.password.value.length==0){
+        alert("Tiene que escribir su Contraseña")
+        document.fcontacto.password.focus()
+        return 0;
+    }
     if (document.fcontacto.Conocido[0].checked == true) {
       document.getElementById('empleador').style.display = 'none';
         document.getElementById('postulante').style.display = 'block';
@@ -38,6 +50,18 @@ function mostrarReferenciaPostulante() {
 }
 
 function mostrarReferenciaEmpleador() {
+
+    if (document.fcontacto.email.value.length==0){
+      	alert("Tiene que escribir su Correo Electronico")
+      	document.fcontacto.email.focus()
+      	return 0;
+   	}
+
+    if (document.fcontacto.password.value.length==0){
+        alert("Tiene que escribir su Contraseña")
+        document.fcontacto.password.focus()
+        return 0;
+    }
     if (document.fcontacto.Conocido[1].checked == true) {
         document.getElementById('postulante').style.display = 'none';
         document.getElementById('empleador').style.display = 'block';

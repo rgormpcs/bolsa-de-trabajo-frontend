@@ -43,30 +43,30 @@
                 <div class="form-group">
                     <label for="inputEmail" class="col-lg-2 control-label">Correo electrónico</label>
                     <div class="col-lg-10">
-                        <input type="email" class="form-control" id="inputEmail" placeholder="Correo electrónico" ng-model="usuarioLogin.correo" required>
+                        <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Correo electrónico" ng-model="usuarioLogin.correo" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputPassword" class="col-lg-2 control-label">Contraseña</label>
                     <div class="col-lg-10">
-                        <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña" ng-model="usuarioLogin.contrasenia" required>
+                        <input type="password"  name="password" class="form-control" id="inputPassword" placeholder="Contraseña" ng-model="usuarioLogin.contrasenia" required>
                     </div>
                 </div>
                 <div>
                     <br>
-                    <input type="radio" name="Conocido" value="Postulante" id="Conocido_0" onclick="mostrarReferenciaPostulante();" /> <b>Postulante</b>
-                    <input type="radio" name="Conocido" value="Empleador" id="Conocido_1" onclick="mostrarReferenciaEmpleador();" /> <b>Empleador</b>
+                    <input  type="radio" name="Conocido" value="Postulante" id="Conocido_0" onclick="mostrarReferenciaPostulante();" /> <b>Postulante</b>
+                    <input  type="radio" name="Conocido" value="Empleador" id="Conocido_1" onclick="mostrarReferenciaEmpleador();" /> <b>Empleador</b>
                     <br>
                     <br>
                 </div>
                 <div float="left">
                     <div  id="postulante" style="display:none;">
                         <button type="reset" class="btn btn-default">Cancelar</button>
-                        <button type="submit" class="btn btn-primary" ng-click="loginPostulante()">Ingresar</button>
+                        <button type="submit" class="btn btn-primary"  ng-click="loginPostulante()">Ingresar</button>
                     </div>
                     <div  id="empleador" style="display:none;">
                         <button type="reset" class="btn btn-default">Cancelar</button>
-                        <button type="submit" class="btn btn-primary" ng-click="login()">Ingresar</button>
+                        <button type="submit" class="btn btn-primary"  ng-click="login()">Ingresar</button>
                     </div>
                 </div>
             </fieldset>

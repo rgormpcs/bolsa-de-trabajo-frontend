@@ -33,7 +33,7 @@ app.controller('LoginCtrl', ['$scope', '$state', '$cookies', 'EmpleadorFactory',
 function mostrarReferenciaPostulante() {
 
     if (document.fcontacto.email.value.length==0){
-      	alert("Tiene que escribir su Correo Electronico")
+      	alert("Tiene que escribir su Correo Electrónico")
       	document.fcontacto.email.focus()
       	return 0;
    	}
@@ -52,7 +52,7 @@ function mostrarReferenciaPostulante() {
 function mostrarReferenciaEmpleador() {
 
     if (document.fcontacto.email.value.length==0){
-      	alert("Tiene que escribir su Correo Electronico")
+      	alert("Tiene que escribir su Correo Electrónico")
       	document.fcontacto.email.focus()
       	return 0;
    	}

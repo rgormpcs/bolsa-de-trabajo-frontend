@@ -43,50 +43,54 @@
                 <div class="form-group">
                     <label for="inputCedula" class="col-lg-2 control-label">Cédula de Identidad</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" id="inputCedula" placeholder="Cédula de Identidad" ng-model="postulante.cedulaPostulante">
+                        <input type="text" maxlength="10" onKeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;" class="form-control" id="inputCedula" placeholder="Cédula de Identidad" ng-model="postulante.cedulaPostulante" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputNombre" class="col-lg-2 control-label">Nombre </label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" id="inputNombre" placeholder="Nombre" ng-model="postulante.nombrePostulante">
+                        <input type="text" maxlength="20" onKeypress="if (event.keyCode > 47 && event.keyCode < 58) event.returnValue = false;" class="form-control" id="inputNombre" placeholder="Nombre" ng-model="postulante.nombrePostulante" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputApellido" class="col-lg-2 control-label">Apellído </label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" id="inputApellido" placeholder="Apellido de Postulante" ng-model="postulante.apellidoPostulante">
+                        <input type="text"  maxlength="30" onKeypress="if (event.keyCode > 47 && event.keyCode < 58) event.returnValue = false;" class="form-control" id="inputApellido" placeholder="Apellido de Postulante" ng-model="postulante.apellidoPostulante" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputTelefono" class="col-lg-2 control-label">Teléfono </label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" id="inputTelefono" placeholder="Telefono de Postulante" ng-model="postulante.telefonoPostulante">
+                        <input type="number" maxlength="15" onKeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;" class="form-control" id="inputTelefono" placeholder="Telefono de Postulante" ng-model="postulante.telefonoPostulante" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputCelular" class="col-lg-2 control-label">Celular</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" id="inputCelular" placeholder="Cédula de Identidad" ng-model="postulante.celularPostulante">
+                        <input type="number" maxlength="12" onKeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;" class="form-control" id="inputCelular" placeholder="Cédula de Identidad" ng-model="postulante.celularPostulante" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputEmail" class="col-lg-2 control-label">Correo Electrónico</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" id="inputEmail" placeholder="Correo Electrónico" ng-model="postulante.emailPostulante">
+                        <input type="email" maxlength="20" class="form-control" id="inputEmail" placeholder="Correo Electrónico" ng-model="postulante.emailPostulante" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputNacionalidad" class="col-lg-2 control-label">Nacionalidad</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" id="inputNacionalidad" placeholder="Nacionalidad" ng-model="postulante.nacionalidadPostulante">
+                        <!--<input type="text" class="form-control" id="inputNacionalidad" placeholder="Nacionalidad" ng-model="postulante.nacionalidadPostulante" required>-->
+                        <select class="form-control" id="inputNacionalidad" placeholder="Nacionalidad" ng-model="postulante.nacionalidadPostulante" required>
+                              <option value="Soltero">Ecuatoriana</option>
+                              <option value="Casado">Otros</option>
+                          </select>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputEstadoCivil" class="col-lg-2 control-label">Estado Civil</label>
                     <div class="col-lg-10">
                         <!-- <input type="text" class="form-control" id="inputEstadoCivil" placeholder="Estado Civil" ng-model="postulante.estadoCivilPostulante"> -->
-                      <select class="form-control" id="inputEstadoCivil" placeholder="Estado Civil" ng-model="postulante.estadoCivilPostulante">
+                      <select class="form-control" id="inputEstadoCivil" placeholder="Estado Civil" ng-model="postulante.estadoCivilPostulante" required>
                             <option value="Soltero">Soltero</option>
                             <option value="Casado">Casado</option>
                         </select>
@@ -96,7 +100,7 @@
                     <label for="inputGenero" class="col-lg-2 control-label">Género</label>
                     <div class="col-lg-10">
                         <!-- <input type="text" class="form-control" id="inputGenero" placeholder="Género" ng-model="postulante.generoPostulante"> -->
-                        <select class="form-control" id="inputGenero" placeholder="Género" ng-model="postulante.genroPostulante">
+                        <select class="form-control" id="inputGenero" placeholder="Género" ng-model="postulante.genroPostulante" required>
                             <option value="Masculino">Masculino</option>
                             <option value="Femenino">Femenino</option>
                         </select>
@@ -105,28 +109,36 @@
                 <div class="form-group">
                     <label for="inputFechaNacimiento" class="col-lg-2 control-label">Fecha de Nacimiento</label>
                     <div class="col-lg-10">
-                        <input type="date" class="form-control" id="inputFechaNacimiento" placeholder="Fecha de Nacimiento" ng-model="postulante.fechaNacimientoPostulante">
+                        <input type="date" class="form-control" id="inputFechaNacimiento" placeholder="Fecha de Nacimiento" ng-model="postulante.fechaNacimientoPostulante" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputDescripcion" class="col-lg-2 control-label">Descripción </label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" id="inputDescripcion " placeholder="Descripción " ng-model="postulante.descripcionPerfilPostulante">
+                        <input type="text" maxlength="50"  class="form-control" id="inputDescripcion " placeholder="Descripción " ng-model="postulante.descripcionPerfilPostulante" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputCv" class="col-lg-2 control-label">Curriculum</label>
                     <div class="col-lg-10">
-                        <input type="password" class="form-control" id="inputCv" placeholder="Curriculum" ng-model="postulante.cvPostulante">
+                        <input type="password" class="form-control" id="inputCv" placeholder="Curriculum" ng-model="postulante.cvPostulante" required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="inputPassword" class="col-lg-2 control-label">Contraseña</label>
                     <div class="col-lg-10">
-                        <input type="password" class="form-control" id="inputEmail" placeholder="Contraseña" ng-model="postulante.contraseniaPostulante">
+                        <input type="password" maxlength="15" class="form-control" id="inputEmail" placeholder="Contraseña" ng-model="postulante.contraseniaPostulante" required>
                     </div>
                 </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-2">
+                            <button type="reset" class="btn btn-default">Cancelar</button>
+                            <button type="submit" class="btn btn-primary" ng-click="registrarPostulante()">Registrar</button>
+                        </div>
+                    </div>
+
             </fieldset>
         </form>
     </div>
@@ -149,19 +161,7 @@
         </div>
     </div>
 
-    <div class="col-sm-2"></div>
 
-    <div class="row">
-        <div class="col-sm-4"></div>
-        <div class="col-sm-4">
-            <div class="form-group">
-                <div class="col-lg-10 col-lg-offset-2">
-                    <button type="reset" class="btn btn-default">Cancelar</button>
-                    <button type="submit" class="btn btn-primary" ng-click="registrarPostulante()">Registrar</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4"></div>
-    </div>
+
 
 </div>

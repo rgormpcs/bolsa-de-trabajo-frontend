@@ -34,6 +34,7 @@ app.controller('EditarPerfilPostulanteCtrl', ['$scope', 'PostulanteFactory', '$c
             function success(respuesta) {
                 console.log("postulante actualizado", respuesta);
                 $scope.postulante = respuesta;
+                alert("Se Actualizo Correctamente")
             },
             function error(error) {
                 console.log(error);

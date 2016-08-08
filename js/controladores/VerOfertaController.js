@@ -19,6 +19,8 @@ app.controller('VerOfertaCtrl', ['$scope', 'OfertaTrabajoFactory', '$stateParams
             }).$promise.then(
                 function success(respuesta) {
                     console.log("postulacion ok", respuesta);
+                      alert("Se Postulo Correctamente")
+                          location.href = "#/postulaciones-realizadas";
                 },
                 function error(error) {
                     console.log(error);

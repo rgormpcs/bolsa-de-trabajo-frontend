@@ -6,6 +6,8 @@ app.controller('RegistroDeOfertaCtrl', ['$scope', 'OfertaTrabajoFactory', '$cook
         OfertaTrabajoFactory.save($scope.ofertaTrabajo).$promise.then(function success(respuesta) {
                 console.log('éxito en ingreso de solicitud', respuesta);
                 $scope.ofertaTrabajo = {};
+                alert("Se Registro Correctamente")
+                location.href = "#/ofertas-empleador";
             },
             function error(error) {
                 console.log('Error en ingreso de solicitud', error);

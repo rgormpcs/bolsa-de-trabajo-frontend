@@ -5,6 +5,8 @@ app.controller('RegistroDePostulanteCtrl', ['$scope', 'PostulanteFactory', funct
         PostulanteFactory.save($scope.postulante).$promise.then(function success(respuesta) {
                 console.log('éxito en ingreso de solicitud', respuesta);
                 $scope.postulante = {};
+                alert("Se Registro Correctamente")
+                location.href = "#/login";
             },
             function error(error) {
                 console.log('Error en ingreso de solicitud', error);

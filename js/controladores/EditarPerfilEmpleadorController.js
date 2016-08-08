@@ -28,6 +28,7 @@ app.controller('EditarPerfilEmpleadorCtrl', ['$scope', 'EmpleadorFactory', '$coo
             function success(respuesta) {
                 console.log("empleador actualizado", respuesta);
                 $scope.empleador = respuesta;
+                alert("Se Actualizo Correctamente")
             },
             function error(error) {
                 console.log(error);

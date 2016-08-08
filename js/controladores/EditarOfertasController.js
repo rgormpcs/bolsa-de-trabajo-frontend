@@ -32,6 +32,7 @@ app.controller('EditarOfertaCtrl', ['$scope', '$stateParams', 'OfertaTrabajoFact
             function success(respuesta) {
                 console.log("oferta actualizado", respuesta);
                 $scope.ofertaTrabajo = respuesta;
+                alert("Se Actualizo Correctamente")
             },
             function error(error) {
                 console.log(error);

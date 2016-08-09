@@ -14,8 +14,8 @@ app.controller('PostulacionesPostulanteCtrl', ['$scope','$cookies', 'OfertaTraba
                 idPostulante: $cookies.get('postulanteId')
             }).$promise.then(
                 function success(respuesta) {
-                    console.log("postulantes", respuesta);
-                    $scope.postulantes = respuesta;
+                    console.log("postulante", respuesta);
+                    $scope.postulante = respuesta;
                 },
                 function error(error) {
                     console.log(error);

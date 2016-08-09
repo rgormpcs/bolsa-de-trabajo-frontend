@@ -13,7 +13,7 @@ app.controller('PostulacionesRealizadasCtrl', ['$scope', 'PostulanteFactory', '$
                         id: respuesta.postulaciones[i].idOfertaTrabajo
                     }).$promise.then(function success(respuesta) {
                             console.log('éxito en obtener oferta de trabajo', respuesta);
-                            $scope.ofertas.push(respuesta);                    
+                            $scope.ofertas.push(respuesta);
                         },
                         function error(error) {
                             console.log('Error', error);
@@ -25,5 +25,16 @@ app.controller('PostulacionesRealizadasCtrl', ['$scope', 'PostulanteFactory', '$
             function error(error) {
                 console.log('error', error);
             });
+            
+            PostulanteFactory.getPostulante({
+                idPostulante: $cookies.get('postulanteId')
+            }).$promise.then(
+                function success(respuesta) {
+                    console.log("postulante", respuesta);
+                    $scope.postulante = respuesta;
+                },
+                function error(error) {
+                    console.log(error);
+                });
     }
 ]);

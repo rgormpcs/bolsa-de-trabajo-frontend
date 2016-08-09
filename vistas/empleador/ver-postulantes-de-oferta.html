@@ -1,32 +1,60 @@
-<div id="wrapper">
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
+<!DOCTYPE html>
+<html lang="es" />
+<title>Ver Postulaciones de Oferta</title>
 
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#/ofertas-empleador"><img src="img/work.png" alt="" /></a>
+<div id="wrapper">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#/ofertas-empleador"><img src="img/work.png" alt="icono" /></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#/ofertas-empleador">Ofertas</a></li>
+                    <li><a href="#/registro-de-oferta">Nueva Oferta</a></li>
+                    <li><a href="#/editar-oferta-empleador">Editar Oferta</a></li>
+                    <li><a href="#/editar-perfil-empleador">Editar Perfil</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#/ofertas-empleador">Ofertas</a></li>
-                <li><a href="#/registro-de-oferta">Nueva Oferta</a></li>
-                <li><a href="#/editar-oferta-empleador">Editar Oferta</a></li>
-                <li><a href="#/editar-perfil-empleador">Editar Perfil</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
-            </ul>
+    </nav>
+
+    <!--  <div ng-repeat="postulante in postulantes">
+        <p>
+            {{postulante.nombrePostulante}} {{postulante.apellidoPostulante}} - {{postulante.celularPostulante}}
+        </p>
+    </div>-->
+    <div>
+
+
+        <div ng-repeat="postulante in postulantes">
+            <div class="panel panel-default" ALIGN=center>
+                <div class="panel-heading">Postulante</div>
+                <div class="panel-body">
+                    <div><b>Nombre:</b> {{postulante.nombrePostulante}}</div>
+                    <div><b>Apellido:</b> {{postulante.apellidoPostulante}}</div>
+                    <div><b>Teléfono:</b> {{postulante.telefonoPostulante}}</div>
+                    <div><b>Celular:</b> {{postulante.celularPostulante}}</div>
+                    <div><b>Correo:</b> {{postulante.emailPostulante}}</div>
+                    <div><b>Nacionalidad:</b> {{postulante.nacionalidadPostulante}}</div>
+                    <div><b>Estado Civil:</b> {{postulante.estadoCivilPostulante}}</div>
+                    <div><b>Genero:</b> {{postulante.generoPostulante}}</div>
+                    <div><b>Fecha Nacimiento:</b> {{postulante.fechaNacimientoPostulante | date:'medium'}}</div>
+                    <div><b>Descripción:</b> {{postulante.descripcionPerfilPostulante}}</div>
+                    <div><b>CV:</b> {{postulante.cvPostulante}}</div>
+
+                </div>
+            </div>
         </div>
     </div>
-</nav>
-
-<div ng-repeat="postulante in postulantes">
-  <p>
-    {{postulante.nombrePostulante}} {{postulante.apellidoPostulante}} - {{postulante.celularPostulante}}
-  </p>
 </div>
-</div>
+<h1></h1>

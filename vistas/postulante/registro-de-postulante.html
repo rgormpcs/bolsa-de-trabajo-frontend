@@ -160,7 +160,10 @@
                 <div class="form-group">
                     <label for="inputCv" class="col-lg-2 control-label">Curriculum y Experiencia</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" id="inputCv" placeholder="Curriculum" ng-model="postulante.cvPostulante" required>
+                        <input type="url" name="cv" class="form-control" id="inputCv" placeholder="Curriculum y Experiencia" ng-model="postulante.cvPostulante" required>
+                        <span class="messages" ng-show="validacion.$submitted || validacion.cv.$touched">
+                        <span ng-show="validacion.cv.$error.url">Ingrese un link de referencia a su CV.</span>
+                        </span>
                     </div>
                 </div>
 

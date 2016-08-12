@@ -50,7 +50,7 @@
                     <div><b>Genero:</b> {{postulante.generoPostulante}}</div>
                     <div><b>Fecha Nacimiento:</b> {{postulante.fechaNacimientoPostulante | date:'medium'}}</div>
                     <div><b>Descripción:</b> {{postulante.descripcionPerfilPostulante}}</div>
-                    <div><b>CV:</b> {{postulante.cvPostulante}}</div>
+                    <div><b>CV:</b> <a  ng-href="{{postulante.cvPostulante}}" target="_blank"> Ver Currículum Vitae</a></div>
 
                 </div>
             </div>

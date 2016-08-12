@@ -49,6 +49,9 @@
                                 <td>{{oferta.areaTrabajo}}</td>
                                 <td>{{oferta.tipoDePuestoTrabajo}}</td>
                                 <td>{{oferta.fechaInicioPublicacionTrabajo | date:'medium'}}</td>
+                                <td>
+                                    <input type="button" value="Eliminar" ng-click="getPostulacion(oferta)" />
+                                </td>
                             </tr>
                         </tbody>
                     </table>

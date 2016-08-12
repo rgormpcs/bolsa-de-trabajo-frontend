@@ -25,7 +25,37 @@ app.controller('PostulacionesRealizadasCtrl', ['$scope', 'PostulanteFactory', '$
             function error(error) {
                 console.log('error', error);
             });
-            
+
+            $scope.getPostulacion = function(oferta) {
+                OfertaTrabajoFactory.getPostulacion({
+                    idPostulante: $cookies.get('postulanteId'),
+                    idOfertaTrabajo: oferta.id
+                }).$promise.then(
+                    function success(respuesta) {
+                        //console.log("postulacion", respuesta);
+                        console.log("postulacion", respuesta[0]);
+                        $scope.postulacion = respuesta[0];
+                        $scope.eliminarPostulacion($scope.postulacion);
+
+                    },
+                    function error(error) {
+                        console.log(error);
+                    });
+            }
+
+            $scope.eliminarPostulacion = function(postulacion) {
+                OfertaTrabajoFactory.deletePostulacion({
+                    idPostulacion: postulacion.id
+                }).$promise.then(
+                    function success(respuesta) {
+                        //console.log("postulacion", respuesta);
+                        console.log("borrado");
+                    },
+                    function error(error) {
+                        console.log(error);
+                    });
+            }
+
             PostulanteFactory.getPostulante({
                 idPostulante: $cookies.get('postulanteId')
             }).$promise.then(

@@ -43,6 +43,19 @@ app.controller('PostulacionesRealizadasCtrl', ['$scope', '$state', 'PostulanteFa
                 });
         }
 
+        $scope.getOfertasPorFacultad = function(facultad) {
+            OfertaTrabajoFactory.getOfertaTrabajoPorFacultad({
+                facultadTrabajo: facultad
+            }).$promise.then(
+                function success(respuesta) {
+                    console.log("OFERTAS", respuesta);
+                    $scope.ofertas = respuesta;
+                },
+                function error(error) {
+                    console.log(error);
+                });
+        }
+
         $scope.eliminarPostulacion = function(postulacion) {
             OfertaTrabajoFactory.deletePostulacion({
                 idPostulacion: postulacion.id
@@ -50,7 +63,9 @@ app.controller('PostulacionesRealizadasCtrl', ['$scope', '$state', 'PostulanteFa
                 function success(respuesta) {
                     //console.log("postulacion", respuesta);
                     console.log("borrado");
-                    $state.go($state.current, {}, {reload: true});
+                    $state.go($state.current, {}, {
+                        reload: true
+                    });
                 },
                 function error(error) {
                     console.log(error);

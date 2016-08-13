@@ -51,6 +51,14 @@ app.factory('OfertaTrabajoFactory', ['$resource', '$rootScope', function($resour
             },
             isArray: true
         },
+        getOfertaTrabajoPorFacultad: {
+            url: 'http://localhost:1337/ofertaTrabajo?facultadTrabajo=:facultadTrabajo',
+            method: 'GET',
+            params: {
+                facultadTrabajo: '@facultadTrabajo'
+            },
+            isArray: true
+        },
         getPostulacion: {
             //http://localhost:1337/postulacion?idPostulante=1&idOfertaTrabajo=1
             url: 'http://localhost:1337/postulacion?idPostulante=:idPostulante&idOfertaTrabajo=:idOfertaTrabajo',

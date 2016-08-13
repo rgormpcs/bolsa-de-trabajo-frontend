@@ -1,5 +1,5 @@
-app.controller('PostulacionesRealizadasCtrl', ['$scope', 'PostulanteFactory', '$cookies', 'OfertaTrabajoFactory',
-    function($scope, PostulanteFactory, $cookies, OfertaTrabajoFactory) {
+app.controller('PostulacionesRealizadasCtrl', ['$scope', '$state', 'PostulanteFactory', '$cookies', 'OfertaTrabajoFactory',
+    function($scope, $state, PostulanteFactory, $cookies, OfertaTrabajoFactory) {
         console.log('en PostulacionesRealizadasCtrl');
         $scope.ofertas = [];
         PostulanteFactory.get({
@@ -26,45 +26,46 @@ app.controller('PostulacionesRealizadasCtrl', ['$scope', 'PostulanteFactory', '$
                 console.log('error', error);
             });
 
-            $scope.getPostulacion = function(oferta) {
-                OfertaTrabajoFactory.getPostulacion({
-                    idPostulante: $cookies.get('postulanteId'),
-                    idOfertaTrabajo: oferta.id
-                }).$promise.then(
-                    function success(respuesta) {
-                        //console.log("postulacion", respuesta);
-                        console.log("postulacion", respuesta[0]);
-                        $scope.postulacion = respuesta[0];
-                        $scope.eliminarPostulacion($scope.postulacion);
-
-                    },
-                    function error(error) {
-                        console.log(error);
-                    });
-            }
-
-            $scope.eliminarPostulacion = function(postulacion) {
-                OfertaTrabajoFactory.deletePostulacion({
-                    idPostulacion: postulacion.id
-                }).$promise.then(
-                    function success(respuesta) {
-                        //console.log("postulacion", respuesta);
-                        console.log("borrado");
-                    },
-                    function error(error) {
-                        console.log(error);
-                    });
-            }
-
-            PostulanteFactory.getPostulante({
-                idPostulante: $cookies.get('postulanteId')
+        $scope.getPostulacion = function(oferta) {
+            OfertaTrabajoFactory.getPostulacion({
+                idPostulante: $cookies.get('postulanteId'),
+                idOfertaTrabajo: oferta.id
             }).$promise.then(
                 function success(respuesta) {
-                    console.log("postulante", respuesta);
-                    $scope.postulante = respuesta;
+                    //console.log("postulacion", respuesta);
+                    console.log("postulacion", respuesta[0]);
+                    $scope.postulacion = respuesta[0];
+                    $scope.eliminarPostulacion($scope.postulacion);
+
                 },
                 function error(error) {
                     console.log(error);
                 });
+        }
+
+        $scope.eliminarPostulacion = function(postulacion) {
+            OfertaTrabajoFactory.deletePostulacion({
+                idPostulacion: postulacion.id
+            }).$promise.then(
+                function success(respuesta) {
+                    //console.log("postulacion", respuesta);
+                    console.log("borrado");
+                    $state.go($state.current, {}, {reload: true});
+                },
+                function error(error) {
+                    console.log(error);
+                });
+        }
+
+        PostulanteFactory.getPostulante({
+            idPostulante: $cookies.get('postulanteId')
+        }).$promise.then(
+            function success(respuesta) {
+                console.log("postulante", respuesta);
+                $scope.postulante = respuesta;
+            },
+            function error(error) {
+                console.log(error);
+            });
     }
 ]);

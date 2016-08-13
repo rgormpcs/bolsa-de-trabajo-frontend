@@ -34,7 +34,7 @@
             <div class="row content">
                 <div class="col-sm-2 sidenav">
                     <p ng-repeat="facultad in facultades">
-                        <a >{{facultad.nombre}}</a>
+                          <a href ng-click="getOfertasPorFacultad(facultad.nombre)">{{facultad.nombre}}</a>
                     </p>
                 </div>
                 <div class="col-sm-8 text-left">

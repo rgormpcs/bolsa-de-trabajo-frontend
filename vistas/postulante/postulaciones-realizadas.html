@@ -44,13 +44,14 @@
                               <th>Área</th>
                               <th>Tipo de Puesto de Trabajo</th>
                               <th>Fecha de Publicación</th>
+                              <th><span class="glyphicon glyphicon-remove"></span></th>
                           </tr>
                             <tr ng-repeat="oferta in ofertas">
                                 <td>{{oferta.areaTrabajo}}</td>
                                 <td>{{oferta.tipoDePuestoTrabajo}}</td>
                                 <td>{{oferta.fechaInicioPublicacionTrabajo | date:'medium'}}</td>
                                 <td>
-                                    <input type="button" value="Eliminar" ng-click="getPostulacion(oferta)" />
+                                    <input type="button" class="btn btn-primary" value="Eliminar" ng-click="getPostulacion(oferta)" />
                                 </td>
                             </tr>
                         </tbody>

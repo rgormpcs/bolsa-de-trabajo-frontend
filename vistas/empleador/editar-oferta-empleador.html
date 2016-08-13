@@ -1,166 +1,168 @@
 <!DOCTYPE html>
-<html lang="es"/>
+<html lang="es" />
 <title>Editar Oferta</title>
 
 <div id="wrapper">
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
 
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#/ofertas-empleador"><img src="img/work.png" alt="icono" /></a>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#/ofertas-empleador"><img src="img/work.png" alt="icono" /></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#/ofertas-empleador">Ofertas</a></li>
+                    <li><a href="#/registro-de-oferta">Nueva Oferta</a></li>
+                    <li><a href="#/editar-oferta-empleador">Editar Oferta</a></li>
+                    <li><a href="#/editar-perfil-empleador">Editar Perfil</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#/ofertas-empleador">Ofertas</a></li>
-                <li><a href="#/registro-de-oferta">Nueva Oferta</a></li>
-                <li><a href="#/editar-oferta-empleador">Editar Oferta</a></li>
-                <li><a href="#/editar-perfil-empleador">Editar Perfil</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
-            </ul>
+    </nav>
+    <!-- TODO: cambiar for, id, etc ... -->
+    <div class="row">
+        <div class="col-sm-5"></div>
+        <div class="col-sm-2">
+            <img class="logo" src="img/logo.png" alt="logo" />
         </div>
+        <div class="col-sm-5"></div>
     </div>
-</nav>
-<!-- TODO: cambiar for, id, etc ... -->
-<div class="row">
-    <div class="col-sm-5"></div>
-    <div class="col-sm-2">
-        <img class="logo" src="img/logo.png" alt="logo" />
-    </div>
-    <div class="col-sm-5"></div>
-</div>
-<div class="col-sm-2"></div>
-<div class="col-sm-8">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
 
 
-    <legend id="titulo">Editar Oferta</legend>
+        <legend id="titulo">Editar Oferta</legend>
 
-    <!--engine repeat-->
-    <div ng-repeat="ofertaTrabajo in ofertasTrabajo" class="container-fluid">
-        <p> <h3><b>Área:</b></h3> {{ofertaTrabajo.areaTrabajo}}</p>
-        <p><h3><b>Tipo de Puesto:</b></h3> {{ofertaTrabajo.tipoDePuestoTrabajo}}</p>
-        <br>
-        <button ng-click="ofertaTrabajo.visible=!ofertaTrabajo.visible" class="btn btn-primary">Editar</button>
-        <br>
-        <br>
-        <form class="form-horizontal" ng-show=" ofertaTrabajo.visible" name="validacion">
-          <fieldset>
-              <div class="form-group">
-                  <label for="inputArea" class="col-lg-2 control-label">Área</label>
-                  <div class="col-lg-10">
-                      <input type="text" name="area" maxlength="50" class="form-control" id="inputArea" placeholder="Área" ng-model="ofertaTrabajo.areaTrabajo" required>
-                      <span class="messages" ng-show="validacion.$submitted || validacion.area.$touched">
-                      <span ng-show="validacion.area.$error.required">El campo es Requerido.</span>
-                      </span>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label for="inputTipoPuesto" class="col-lg-2 control-label">Tipo de Puesto</label>
-                  <div class="col-lg-10">
-                      <input type="text" name="tipoP" maxlength="50" class="form-control" id="inputTipoPuesto" placeholder="Tipo de Puesto" ng-model="ofertaTrabajo.tipoDePuestoTrabajo" required>
-                      <span class="messages" ng-show="validacion.$submitted || validacion.tipoP.$touched">
-                      <span ng-show="validacion.tipoP.$error.required">El campo es Requerido.</span>
-                      </span>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label for="inputFacultad" class="col-lg-2 control-label">Facultad</label>
-                  <div class="col-lg-10">
-                      <!--<select class="form-control" ng-model="ofertaTrabajo.facultadTrabajo" ng-options="facultad as facultad.nombre for facultad in facultades track by facultad.clave" >
-                      <option value="{{facultadTrabajo.nombre}}">Seleccione una facultad</option>
-                    </select>-->
-                      <select class="form-control" name="facultad" ng-model="ofertaTrabajo.facultadTrabajo" required>
-                          <option value="{{facultad.nombre}}" ng-repeat="facultad in facultades">{{facultad.nombre}}</option>
-                      </select>
-                      <span class="messages" ng-show="validacion.$submitted || validacion.facultad.$touched">
-                      <span ng-show="validacion.facultad.$error.required">El campo es Requerido.</span>
-                      </span>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label for="inputRemuneracion" class="col-lg-2 control-label">Remuneración$</label>
-                  <div class="col-lg-10">
-                      <input type="number"  name="remuneracion" maxlength="12" class="form-control" id="inputRemuneracion" placeholder="Remuneración" ng-model="ofertaTrabajo.remuneracion" required>
-                      <span class="messages" ng-show="validacion.$submitted || validacion.remuneracion.$touched">
-                      <span ng-show="validacion.remuneracion.$error.required">El campo es Requerido y no puede ingresar letras.</span>
-                      </span>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label for="inputDireccion" class="col-lg-2 control-label">Dirección</label>
-                  <div class="col-lg-10">
-                      <input type="text" name="direccion" maxlength="60" class="form-control" id="inputDireccion" placeholder="Dirección" ng-model="ofertaTrabajo.direccionTrabajo" required>
-                      <span class="messages" ng-show="validacion.$submitted || validacion.direccion.$touched">
-                      <span ng-show="validacion.direccion.$error.required">El campo es Requerido.</span>
-                      </span>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label for="inputDescripcion" class="col-lg-2 control-label">Descripción</label>
-                  <div class="col-lg-10">
-                      <input type="text" name="descripcion" maxlength="100" class="form-control" id="inputDescripcion" placeholder="Deescripcion" ng-model="ofertaTrabajo.descripcionTrabajo" required>
-                      <span class="messages" ng-show="validacion.$submitted || validacion.descripcion.$touched">
-                      <span ng-show="validacion.descripcion.$error.required">El campo es Requerido.</span>
-                      </span>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label for="inputFechaInicio" class="col-lg-2 control-label">Fecha Inicio</label>
-                  <div class="col-lg-10">
-                      <input type="date"  name="fechaI" class="form-control" id="inputFechaInicio" placeholder="Fecha Inicio" ng-model="ofertaTrabajo.fechaInicioPublicacionTrabajo" required>
-                      <span class="messages" ng-show="validacion.$submitted || validacion.fechaI.$touched">
-                      <span ng-show="validacion.fechaI.$error.required">El campo es Requerido.</span>
-                      </span>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label for="inputFechaFin" class="col-lg-2 control-label">Fecha Fin</label>
-                  <div class="col-lg-10">
-                      <input type="date"  name="fechaF" class="form-control" id="inputFechaFin" placeholder="Fecha Fin" ng-model="ofertaTrabajo.fechaFinPublicacionTrabajo" required>
-                      <span class="messages" ng-show="validacion.$submitted || validacion.fechaF.$touched">
-                      <span ng-show="validacion.fechaF.$error.required">El campo es Requerido.</span>
-                      </span>
-                  </div>
-              </div>
-          </fieldset>
-            <div class="row">
-                <div class="col-sm-4"></div>
-                <div class="col-sm-4">
+        <!--engine repeat-->
+        <div ng-repeat="ofertaTrabajo in ofertasTrabajo" class="container-fluid">
+
+            <p> <font size=4><b>Área:</b></font> {{ofertaTrabajo.areaTrabajo}}</p>
+            <p><font size=4><b>Tipo de Puesto:</b></font> {{ofertaTrabajo.tipoDePuestoTrabajo}}</p>
+            <button ng-click="ofertaTrabajo.visible=!ofertaTrabajo.visible" class="btn btn-primary">Editar</button>
+            <br>
+            <br>
+            <br>
+            <form class="form-horizontal" ng-show=" ofertaTrabajo.visible" name="validacion">
+                <fieldset>
                     <div class="form-group">
-                        <div class="col-lg-10 col-lg-offset-2">
-                            <button type="reset" class="btn btn-default">Cancelar</button>
-                            <button type="submit" class="btn btn-primary" ng-click="editarOferta(ofertaTrabajo)" ng-disabled="validacion.$invalid">Actualizar</button>
+                        <label for="inputArea" class="col-lg-2 control-label">Área</label>
+                        <div class="col-lg-10">
+                            <input type="text" name="area" maxlength="50" class="form-control" id="inputArea" placeholder="Área" ng-model="ofertaTrabajo.areaTrabajo" required>
+                            <span class="messages" ng-show="validacion.$submitted || validacion.area.$touched">
+                      <span ng-show="validacion.area.$error.required">El campo es Requerido.</span>
+                            </span>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="inputTipoPuesto" class="col-lg-2 control-label">Tipo de Puesto</label>
+                        <div class="col-lg-10">
+                            <input type="text" name="tipoP" maxlength="50" class="form-control" id="inputTipoPuesto" placeholder="Tipo de Puesto" ng-model="ofertaTrabajo.tipoDePuestoTrabajo" required>
+                            <span class="messages" ng-show="validacion.$submitted || validacion.tipoP.$touched">
+                      <span ng-show="validacion.tipoP.$error.required">El campo es Requerido.</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputFacultad" class="col-lg-2 control-label">Facultad</label>
+                        <div class="col-lg-10">
+                            <!--<select class="form-control" ng-model="ofertaTrabajo.facultadTrabajo" ng-options="facultad as facultad.nombre for facultad in facultades track by facultad.clave" >
+                      <option value="{{facultadTrabajo.nombre}}">Seleccione una facultad</option>
+                    </select>-->
+                            <select class="form-control" name="facultad" ng-model="ofertaTrabajo.facultadTrabajo" required>
+                                <option value="{{facultad.nombre}}" ng-repeat="facultad in facultades">{{facultad.nombre}}</option>
+                            </select>
+                            <span class="messages" ng-show="validacion.$submitted || validacion.facultad.$touched">
+                      <span ng-show="validacion.facultad.$error.required">El campo es Requerido.</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputRemuneracion" class="col-lg-2 control-label">Remuneración$</label>
+                        <div class="col-lg-10">
+                            <input type="number" name="remuneracion" maxlength="12" class="form-control" id="inputRemuneracion" placeholder="Remuneración" ng-model="ofertaTrabajo.remuneracion" required>
+                            <span class="messages" ng-show="validacion.$submitted || validacion.remuneracion.$touched">
+                      <span ng-show="validacion.remuneracion.$error.required">El campo es Requerido y no puede ingresar letras.</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputDireccion" class="col-lg-2 control-label">Dirección</label>
+                        <div class="col-lg-10">
+                            <input type="text" name="direccion" maxlength="60" class="form-control" id="inputDireccion" placeholder="Dirección" ng-model="ofertaTrabajo.direccionTrabajo" required>
+                            <span class="messages" ng-show="validacion.$submitted || validacion.direccion.$touched">
+                      <span ng-show="validacion.direccion.$error.required">El campo es Requerido.</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputDescripcion" class="col-lg-2 control-label">Descripción</label>
+                        <div class="col-lg-10">
+                            <input type="text" name="descripcion" maxlength="100" class="form-control" id="inputDescripcion" placeholder="Deescripcion" ng-model="ofertaTrabajo.descripcionTrabajo" required>
+                            <span class="messages" ng-show="validacion.$submitted || validacion.descripcion.$touched">
+                      <span ng-show="validacion.descripcion.$error.required">El campo es Requerido.</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputFechaInicio" class="col-lg-2 control-label">Fecha Inicio</label>
+                        <div class="col-lg-10">
+                            <input type="date" name="fechaI" class="form-control" id="inputFechaInicio" placeholder="Fecha Inicio" ng-model="ofertaTrabajo.fechaInicioPublicacionTrabajo" required>
+                            <span class="messages" ng-show="validacion.$submitted || validacion.fechaI.$touched">
+                      <span ng-show="validacion.fechaI.$error.required">El campo es Requerido.</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputFechaFin" class="col-lg-2 control-label">Fecha Fin</label>
+                        <div class="col-lg-10">
+                            <input type="date" name="fechaF" class="form-control" id="inputFechaFin" placeholder="Fecha Fin" ng-model="ofertaTrabajo.fechaFinPublicacionTrabajo" required>
+                            <span class="messages" ng-show="validacion.$submitted || validacion.fechaF.$touched">
+                      <span ng-show="validacion.fechaF.$error.required">El campo es Requerido.</span>
+                            </span>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="row">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <div class="col-lg-10 col-lg-offset-2">
+                                <button type="submit" class="btn btn-primary" ng-click="ofertaTrabajo.visible=!ofertaTrabajo.visible">Cancelar</button>
+                                <button type="submit" class="btn btn-primary" ng-click="editarOferta(ofertaTrabajo)" ng-disabled="validacion.$invalid">Actualizar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4"></div>
                 </div>
-                <div class="col-sm-4"></div>
-            </div>
-        </form>
+            </form>
+
+        </div>
     </div>
-</div>
-<div class="col-sm-2"></div>
-<div class="col-sm-2 sidenav">
-    <div class="well">
-        <p>Cambio tipo de Letra</p>
-        <input type="button" value="Si" onClick="dis()" />
-        <input type="button" value="No" onClick="san()" />
+    <div class="col-sm-2"></div>
+    <div class="col-sm-2 sidenav">
+        <div class="well">
+            <p>Cambio tipo de Letra</p>
+            <input type="button" value="Si" onClick="dis()" />
+            <input type="button" value="No" onClick="san()" />
+        </div>
+        <div class="well">
+            <p>Justificar</p>
+            <input type="button" value="Si" onClick="justificar()" />
+            <input type="button" value="No" onClick="noJustificar()" />
+        </div>
+        <div class="well">
+            <p>Tamaño Letra</p>
+            <input type="button" value="-" onClick="zoomOut()" />
+            <input type="button" value="+" onClick="zoomIn()" />
+        </div>
     </div>
-    <div class="well">
-        <p>Justificar</p>
-        <input type="button" value="Si" onClick="justificar()" />
-        <input type="button" value="No" onClick="noJustificar()" />
-    </div>
-    <div class="well">
-        <p>Tamaño Letra</p>
-        <input type="button" value="-" onClick="zoomOut()" />
-        <input type="button" value="+" onClick="zoomIn()" />
-    </div>
-</div>
 </div>
 <h1></h1>

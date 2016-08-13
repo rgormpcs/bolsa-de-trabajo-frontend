@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es"/>
+<html lang="es" />
 <title>Ofertas Empleador</title>
 
 <div id="wrapper">
@@ -34,22 +34,22 @@
             <div class="row content">
                 <div class="col-sm-2 sidenav">
                     <p ng-repeat="facultad in facultades">
-                          <a href ng-click="getOfertasPorFacultad(facultad.nombre)">{{facultad.nombre}}</a>
+                        <a href ng-click="getOfertasPorFacultad(facultad.nombre)">{{facultad.nombre}}</a>
                     </p>
                 </div>
                 <div class="col-sm-8 text-left">
                     <table class="table table-striped" summary="Tabla de Ofertas">
+                      <tr>
+                          <th>Área</th>
+                          <th>Tipo de Puesto de Trabajo</th>
+                          <th>Fecha de Publicación</th>
+                      </tr>
                         <tbody ng-repeat="oferta in ofertas">
-                          <tr>
-                              <th>Área</th>
-                              <th>Tipo de Puesto de Trabajo</th>
-                              <th>Fecha de Publicación</th>
-                          </tr>
-                          <tr>
-                              <td><a href="#/ver-postulantes-de-oferta/{{oferta.id}}">{{oferta.areaTrabajo}}</a></td>
-                              <td><a href="#/ver-postulantes-de-oferta/{{oferta.id}}">{{oferta.tipoDePuestoTrabajo}}</a></td>
-                              <td><a href="#/ver-postulantes-de-oferta/{{oferta.id}}">{{oferta.fechaInicioPublicacionTrabajo | date:'medium'}}</a></td>
-                          </tr>
+                            <tr>
+                                <td><a href="#/ver-postulantes-de-oferta/{{oferta.id}}">{{oferta.areaTrabajo}}</a></td>
+                                <td><a href="#/ver-postulantes-de-oferta/{{oferta.id}}">{{oferta.tipoDePuestoTrabajo}}</a></td>
+                                <td><a href="#/ver-postulantes-de-oferta/{{oferta.id}}">{{oferta.fechaInicioPublicacionTrabajo | date:'medium'}}</a></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>

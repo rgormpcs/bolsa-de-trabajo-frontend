@@ -1,5 +1,6 @@
 app.controller('EditarOfertaCtrl', ['$scope', '$stateParams', 'OfertaTrabajoFactory', 'EmpleadorFactory', '$cookies', function($scope, $stateParams, OfertaTrabajoFactory, EmpleadorFactory, $cookies) {
     $scope.laOferta = {};
+    $scope.date = new Date();
     console.log("id empelador vaaaaaa???", $stateParams.idEmpleador);
 
     OfertaTrabajoFactory.getOfertaTrabajoPorEmpleador({

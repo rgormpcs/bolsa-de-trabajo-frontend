@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es"/>
+<html lang="es" />
 <title>Registro de Oferta</title>
 
 <div id="wrapper">
@@ -92,7 +92,7 @@
                 <div class="form-group">
                     <label for="inputDescripcion" class="col-lg-2 control-label">Descripción</label>
                     <div class="col-lg-10">
-                        <input type="text" name="descripcion" maxlength="100" class="form-control" id="inputDescripcion" placeholder="Deescripcion" ng-model="ofertaTrabajo.descripcionTrabajo" required>
+                        <input type="text" name="descripcion" maxlength="100" class="form-control" id="inputDescripcion" placeholder="Descripcion" ng-model="ofertaTrabajo.descripcionTrabajo" required>
                         <span class="messages" ng-show="validacion.$submitted || validacion.descripcion.$touched">
                         <span ng-show="validacion.descripcion.$error.required">El campo es Requerido.</span>
                         </span>
@@ -101,7 +101,7 @@
                 <div class="form-group">
                     <label for="inputFechaInicio" class="col-lg-2 control-label">Fecha Inicio</label>
                     <div class="col-lg-10">
-                        <input type="date"  name="fechaI" class="form-control" id="inputFechaInicio" placeholder="Fecha Inicio" ng-model="ofertaTrabajo.fechaInicioPublicacionTrabajo" required>
+                        <input type="date" name="fechaI" class="form-control" min="{{date | date:'yyyy-MM-dd'}}" id="inputFechaInicio" placeholder="Fecha Inicio" ng-model="ofertaTrabajo.fechaInicioPublicacionTrabajo" required>
                         <span class="messages" ng-show="validacion.$submitted || validacion.fechaI.$touched">
                         <span ng-show="validacion.fechaI.$error.required">El campo es Requerido.</span>
                         </span>
@@ -110,7 +110,7 @@
                 <div class="form-group">
                     <label for="inputFechaFin" class="col-lg-2 control-label">Fecha Fin</label>
                     <div class="col-lg-10">
-                        <input type="date"  name="fechaF" class="form-control" id="inputFechaFin" placeholder="Fecha Fin" ng-model="ofertaTrabajo.fechaFinPublicacionTrabajo" required>
+                        <input type="date" name="fechaF" class="form-control" min="{{date | date:'yyyy-MM-dd'}}" id="inputFechaFin" placeholder="Fecha Fin" ng-model="ofertaTrabajo.fechaFinPublicacionTrabajo" required>
                         <span class="messages" ng-show="validacion.$submitted || validacion.fechaF.$touched">
                         <span ng-show="validacion.fechaF.$error.required">El campo es Requerido.</span>
                         </span>

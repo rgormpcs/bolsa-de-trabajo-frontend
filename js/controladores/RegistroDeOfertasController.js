@@ -1,5 +1,6 @@
 app.controller('RegistroDeOfertaCtrl', ['$scope', 'OfertaTrabajoFactory', '$cookies', function($scope, OfertaTrabajoFactory, $cookies) {
     $scope.ofertaTrabajo = {};
+    $scope.date = new Date();
     $scope.registrarNuevaOferta = function() {
         $scope.ofertaTrabajo.idEmpleador = $cookies.get('empleadorId');
         console.log('Nueva Oferta', $scope.ofertaTrabajo);

@@ -11,6 +11,7 @@ app.controller('LoginCtrl', ['$scope', '$state', '$cookies', 'EmpleadorFactory',
             },
             function error(error) {
                 console.log(error);
+                alert("Contraseña incorrecta!");
             });
     },
     $scope.loginPostulante = function() {
@@ -24,6 +25,7 @@ app.controller('LoginCtrl', ['$scope', '$state', '$cookies', 'EmpleadorFactory',
             },
             function error(error) {
                 console.log(error);
+                alert("Contraseña incorrecta!");
             });
     }
 }]);
